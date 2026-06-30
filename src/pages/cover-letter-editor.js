@@ -2,6 +2,7 @@ import yaml from 'js-yaml';
 import { createEditor } from '../editor.js';
 import { renderCoverLetter } from '../cover-letter-renderer.js';
 import { downloadCoverLetterPdf } from '../pdf-export.js';
+import { bindYamlFileInput } from '../yaml-import.js';
 import { getCoverLetter, updateCoverLetter } from '../cover-letter-storage.js';
 import { renderInlineNameEdit, mountInlineNameEdit } from '../inline-name-edit.js';
 import { COVER_LETTER_TEMPLATES, getCoverLetterTemplateById } from '../cover-letter-templates/index.js';
@@ -44,9 +45,14 @@ function renderToolbar(letter) {
           Content exceeds one page — shorten paragraphs
         </span>
         <span id="parse-error" class="parse-error hidden" role="alert"></span>
+        <span id="import-notice" class="import-notice hidden" role="status"></span>
         <button type="button" id="reset-btn" class="btn btn-secondary" title="Reset YAML to template default">
           Reset
         </button>
+        <button type="button" id="import-yaml-btn" class="btn btn-secondary" title="Import cover letter from YAML file">
+          Import YAML
+        </button>
+        <input type="file" id="import-yaml-file" accept=".yaml,.yml,text/yaml,text/x-yaml,application/x-yaml" class="visually-hidden" />
         <button type="button" id="save-btn" class="btn btn-secondary" title="Save cover letter">
           Save
         </button>
@@ -199,6 +205,9 @@ export function mountCoverLetterEditorPage(container, letterId) {
   const previewZoomContainerEl = container.querySelector('#preview-zoom-container');
   const pageWarningEl = container.querySelector('#page-warning');
   const parseErrorEl = container.querySelector('#parse-error');
+  const importNoticeEl = container.querySelector('#import-notice');
+  const importYamlBtn = container.querySelector('#import-yaml-btn');
+  const importYamlFileInput = container.querySelector('#import-yaml-file');
   const downloadBtn = container.querySelector('#download-btn');
   const saveBtn = container.querySelector('#save-btn');
   const saveNoticeEl = container.querySelector('#save-notice');
@@ -276,6 +285,22 @@ export function mountCoverLetterEditorPage(container, letterId) {
 
   function hideParseError() {
     parseErrorEl.classList.add('hidden');
+  }
+
+  let importNoticeTimer = null;
+
+  function showImportNotice(message) {
+    clearTimeout(importNoticeTimer);
+    importNoticeEl.textContent = message;
+    importNoticeEl.classList.remove('hidden');
+    importNoticeTimer = setTimeout(() => {
+      importNoticeEl.classList.add('hidden');
+    }, 3500);
+  }
+
+  function hideImportNotice() {
+    clearTimeout(importNoticeTimer);
+    importNoticeEl.classList.add('hidden');
   }
 
   function getMaxContentHeight() {
@@ -409,6 +434,29 @@ export function mountCoverLetterEditorPage(container, letterId) {
   downloadBtn.addEventListener('click', downloadPdf);
   saveBtn.addEventListener('click', saveLetter);
 
+  importYamlBtn?.addEventListener('click', () => importYamlFileInput?.click());
+
+  if (importYamlFileInput) {
+    bindYamlFileInput(importYamlFileInput, {
+      expectedType: 'cover-letter',
+      onError: (message) => showParseError(message),
+      onImported: ({ yamlText, suggestedName }) => {
+        hideImportNotice();
+        hideParseError();
+        editor.dispatch({
+          changes: { from: 0, to: editor.state.doc.length, insert: yamlText },
+        });
+        updatePreview(yamlText);
+        if (suggestedName && suggestedName !== currentLetter.name) {
+          scheduleSave({ name: suggestedName });
+          currentLetter = { ...currentLetter, name: suggestedName };
+          nameEditor?.setName(suggestedName);
+        }
+        showImportNotice('YAML imported — review before downloading.');
+      },
+    });
+  }
+
   resetBtn.addEventListener('click', () => {
     const t = getCoverLetterTemplateById(currentLetter.templateId);
     if (!confirm("Reset YAML to this template's default content? Your current edits will be lost.")) return;
@@ -435,6 +483,7 @@ export function mountCoverLetterEditorPage(container, letterId) {
   return () => {
     flushSave();
     clearTimeout(saveNoticeTimer);
+    clearTimeout(importNoticeTimer);
     window.removeEventListener('resize', onResize);
     teardownDivider();
     nameEditor?.destroy();

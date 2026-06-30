@@ -10,6 +10,7 @@ import { COVER_LETTER_TEMPLATES } from '../cover-letter-templates/index.js';
 import { mountCoverLetterPreview } from '../cover-letter-preview.js';
 import { renderSidebar } from '../sidebar.js';
 import { navigate } from '../router.js';
+import { bindYamlFileInput } from '../yaml-import.js';
 
 function formatDate(iso) {
   try {
@@ -94,7 +95,10 @@ function renderCoverLettersView() {
         <div class="empty-state">
           <div class="empty-state-title">No cover letters yet</div>
           <p class="empty-state-text">Create a professional cover letter from one of ${COVER_LETTER_TEMPLATES.length} templates. Edit in YAML with live preview and export to PDF.</p>
-          <button type="button" class="btn btn-primary" id="empty-new-cl-btn">Create Your First Cover Letter</button>
+          <div class="page-header-actions">
+            <button type="button" class="btn btn-secondary" id="empty-import-cl-yaml-btn">Import YAML</button>
+            <button type="button" class="btn btn-primary" id="empty-new-cl-btn">Create Your First Cover Letter</button>
+          </div>
         </div>
       `;
 
@@ -105,7 +109,11 @@ function renderCoverLettersView() {
           <h2 class="page-title">Cover Letters</h2>
           <p class="page-subtitle">Write, style, and export professional cover letters. Each letter includes a signature-style closing rendered in a script font.</p>
         </div>
-        <button type="button" class="btn btn-primary" id="new-cover-letter-btn">+ New Cover Letter</button>
+        <div class="page-header-actions">
+          <button type="button" class="btn btn-secondary" id="import-cl-yaml-btn" title="Import a cover letter from a .yaml file">Import YAML</button>
+          <input type="file" id="import-cl-yaml-file" accept=".yaml,.yml,text/yaml,text/x-yaml,application/x-yaml" class="visually-hidden" />
+          <button type="button" class="btn btn-primary" id="new-cover-letter-btn">+ New Cover Letter</button>
+        </div>
       </div>
       ${cards}
     </div>
@@ -195,6 +203,34 @@ export function mountCoverLettersPage(container) {
         navigate(`/cover-letter/edit/${letter.id}`);
       });
     }
+
+    const importYamlBtn = container.querySelector('#import-cl-yaml-btn');
+    const emptyImportYamlBtn = container.querySelector('#empty-import-cl-yaml-btn');
+    const importYamlFileInput = container.querySelector('#import-cl-yaml-file');
+
+    function handleImportYamlClick() {
+      importYamlFileInput?.click();
+    }
+
+    function handleYamlImported({ yamlText, suggestedName }) {
+      const letter = createCoverLetter({
+        name: suggestedName,
+        templateId: COVER_LETTER_TEMPLATES[0].id,
+        yaml: yamlText,
+      });
+      navigate(`/cover-letter/edit/${letter.id}`);
+    }
+
+    if (importYamlFileInput) {
+      bindYamlFileInput(importYamlFileInput, {
+        expectedType: 'cover-letter',
+        onImported: handleYamlImported,
+        onError: (message) => alert(message),
+      });
+    }
+
+    importYamlBtn?.addEventListener('click', handleImportYamlClick);
+    emptyImportYamlBtn?.addEventListener('click', handleImportYamlClick);
 
     container.querySelector('#new-cover-letter-btn')?.addEventListener('click', handleNew);
     container.querySelector('#empty-new-cl-btn')?.addEventListener('click', handleNew);

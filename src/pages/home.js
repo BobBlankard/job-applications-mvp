@@ -4,6 +4,7 @@ import { TEMPLATES, TEMPLATE_CATEGORIES } from '../templates/index.js';
 import { navigate } from '../router.js';
 import { mountResumePreview } from '../preview.js';
 import { renderSidebar } from '../sidebar.js';
+import { bindYamlFileInput } from '../yaml-import.js';
 
 function formatDate(iso) {
   try {
@@ -88,7 +89,10 @@ function renderHomeView() {
         <div class="empty-state">
           <div class="empty-state-title">No resumes yet</div>
           <p class="empty-state-text">Create your first ATS-friendly resume from one of ${TEMPLATES.length} professional templates in the Library.</p>
-          <button type="button" class="btn btn-primary" id="empty-new-btn">Create Your First Resume</button>
+          <div class="page-header-actions">
+            <button type="button" class="btn btn-secondary" id="empty-import-yaml-btn">Import YAML</button>
+            <button type="button" class="btn btn-primary" id="empty-new-btn">Create Your First Resume</button>
+          </div>
         </div>
       `;
 
@@ -99,7 +103,11 @@ function renderHomeView() {
           <h2 class="page-title">Your Resumes</h2>
           <p class="page-subtitle">Create, edit, and export multiple one-page resumes. All templates use single-column ATS-friendly layouts.</p>
         </div>
-        <button type="button" class="btn btn-primary" id="new-resume-btn">+ New Resume</button>
+        <div class="page-header-actions">
+          <button type="button" class="btn btn-secondary" id="import-yaml-btn" title="Import a resume from a .yaml file">Import YAML</button>
+          <input type="file" id="import-yaml-file" accept=".yaml,.yml,text/yaml,text/x-yaml,application/x-yaml" class="visually-hidden" />
+          <button type="button" class="btn btn-primary" id="new-resume-btn">+ New Resume</button>
+        </div>
       </div>
       ${cards}
     </div>
@@ -238,6 +246,34 @@ export function mountHomePage(container, initialView = 'home') {
         navigate(`/edit/${resume.id}`);
       });
     }
+
+    const importYamlBtn = container.querySelector('#import-yaml-btn');
+    const emptyImportYamlBtn = container.querySelector('#empty-import-yaml-btn');
+    const importYamlFileInput = container.querySelector('#import-yaml-file');
+
+    function handleImportYamlClick() {
+      importYamlFileInput?.click();
+    }
+
+    function handleYamlImported({ yamlText, suggestedName }) {
+      const resume = createResume({
+        name: suggestedName,
+        templateId: TEMPLATES[0].id,
+        yaml: yamlText,
+      });
+      navigate(`/edit/${resume.id}`);
+    }
+
+    if (importYamlFileInput) {
+      bindYamlFileInput(importYamlFileInput, {
+        expectedType: 'resume',
+        onImported: handleYamlImported,
+        onError: (message) => alert(message),
+      });
+    }
+
+    importYamlBtn?.addEventListener('click', handleImportYamlClick);
+    emptyImportYamlBtn?.addEventListener('click', handleImportYamlClick);
 
     container.querySelector('#new-resume-btn')?.addEventListener('click', handleNewResume);
     container.querySelector('#empty-new-btn')?.addEventListener('click', handleNewResume);

@@ -3,6 +3,7 @@ import { createEditor } from '../editor.js';
 import { renderResume } from '../renderer.js';
 import { downloadResumePdf } from '../pdf-export.js';
 import { importPdfFile } from '../pdf-import.js';
+import { bindYamlFileInput } from '../yaml-import.js';
 import { getResume, updateResume } from '../storage.js';
 import { renderInlineNameEdit, mountInlineNameEdit } from '../inline-name-edit.js';
 import { TEMPLATES, getTemplateById } from '../templates/index.js';
@@ -51,6 +52,10 @@ function renderToolbar(resume) {
         <button type="button" id="reset-btn" class="btn btn-secondary" title="Reset YAML to template default">
           Reset
         </button>
+        <button type="button" id="import-yaml-btn" class="btn btn-secondary" title="Import resume from YAML file">
+          Import YAML
+        </button>
+        <input type="file" id="import-yaml-file" accept=".yaml,.yml,text/yaml,text/x-yaml,application/x-yaml" class="visually-hidden" />
         <button type="button" id="import-btn" class="btn btn-secondary" title="Import resume from PDF">
           Import PDF
         </button>
@@ -214,7 +219,9 @@ export function mountEditorPage(container, resumeId) {
   const saveNoticeEl = container.querySelector('#save-notice');
   const resetBtn = container.querySelector('#reset-btn');
   const importBtn = container.querySelector('#import-btn');
+  const importYamlBtn = container.querySelector('#import-yaml-btn');
   const importFileInput = container.querySelector('#import-file');
+  const importYamlFileInput = container.querySelector('#import-yaml-file');
   const dividerEl = container.querySelector('#divider');
   const editorPanel = container.querySelector('.editor-panel');
   const zoomInBtn = container.querySelector('#zoom-in-btn');
@@ -441,6 +448,28 @@ export function mountEditorPage(container, resumeId) {
   container.querySelector('#help-btn')?.addEventListener('click', showHelpPanel);
 
   importBtn.addEventListener('click', () => importFileInput.click());
+  importYamlBtn?.addEventListener('click', () => importYamlFileInput?.click());
+
+  if (importYamlFileInput) {
+    bindYamlFileInput(importYamlFileInput, {
+      expectedType: 'resume',
+      onLoading: setImportLoading,
+      onError: (message) => showParseError(message),
+      onImported: ({ yamlText, suggestedName }) => {
+        hideParseError();
+        editor.dispatch({
+          changes: { from: 0, to: editor.state.doc.length, insert: yamlText },
+        });
+        updatePreview(yamlText);
+        if (suggestedName && suggestedName !== currentResume.name) {
+          scheduleSave({ name: suggestedName });
+          currentResume = { ...currentResume, name: suggestedName };
+          nameEditor?.setName(suggestedName);
+        }
+        showImportNotice('YAML imported — review sections before downloading.');
+      },
+    });
+  }
 
   importFileInput.addEventListener('change', async () => {
     const file = importFileInput.files?.[0];
