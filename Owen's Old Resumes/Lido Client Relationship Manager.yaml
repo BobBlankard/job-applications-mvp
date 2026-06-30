@@ -1,0 +1,79 @@
+name: Owen Doherty
+
+contact:
+  email: o.n.doherty@gmail.com
+  phone: (858) 776-6618
+  location: San Diego, CA
+  website: owendohertyworks.com
+
+summary: |
+  San Diego-based business graduate and SDSU alumnus with experience supporting
+  client onboarding, service requests, and detailed record keeping in fast-paced
+  environments. Skilled in responsive client communication, document coordination,
+  cross-functional follow-through, and preparing accurate materials under deadline.
+  Strong Excel user with a finance-adjacent background and commitment to exceptional
+  client experience in a wealth management setting.
+
+experience:
+  - title: Freelance Client Relationship Support
+    company: monoright.com
+    location: San Diego, CA
+    start: February 2026
+    end: Present
+    bullets:
+      - Support multiple client accounts with timely responses to requests, open-item follow-up, and clear status communication.
+      - Maintain organized client documentation, project records, and deliverables with strong attention to accuracy and detail.
+      - Prepare client-facing reports and presentation materials using Excel and Google Analytics to support meeting-ready updates.
+      - Coordinate across concurrent assignments while prioritizing deadlines and keeping clients informed on progress.
+
+  - title: Founder / Client Operations & Service
+    company: Ecstasy Angel
+    location: San Diego, CA
+    start: July 2020
+    end: November 2023
+    bullets:
+      - Managed client onboarding and day-to-day service including inquiries, order follow-up, and transaction-related customer requests.
+      - Maintained detailed customer records, order history, and account information with consistency across sales and fulfillment workflows.
+      - Prepared accurate product and client-facing materials while coordinating information across vendors and internal workflows.
+      - Tracked expenses, budgets, and operational metrics in Excel and Shopify, supporting organized execution and client satisfaction.
+      - Delivered thoughtful, professional service that helped grow the business to 10K+ followers and $10K+ in revenue.
+
+  - title: Co-Founder / Client Operations
+    company: BandHouse
+    location: San Diego, CA
+    start: November 2025
+    end: Present
+    bullets:
+      - Maintain accurate client-facing data across 150+ events and 40+ venues, ensuring records stay current and reliable.
+      - Liaise across product, marketing, and operational stakeholders to resolve open items and support team deliverables.
+      - Anticipate workflow bottlenecks and prioritize tasks to keep onboarding, updates, and client-facing content on schedule.
+
+  - title: Founder / Client Onboarding Support
+    company: PinHaus
+    location: San Diego, CA
+    start: March 2025
+    end: Present
+    bullets:
+      - Coordinated onboarding walkthroughs and stakeholder meetings to collect information and improve the client-facing experience.
+      - Managed operational priorities across a pre-launch product, applying process improvements to later client workflows at BandHouse.
+
+projects:
+  - title: "Seed to Harvest: A Simple Explanation of Venture Capital"
+    start: July 2020
+    end: December 2020
+    bullets:
+      - Researched investing and private markets topics, translating complex financial information into clear client-friendly content.
+
+education:
+  - degree: B.S. Business Administration (Management), Minor in Art
+    school: San Diego State University (SDSU), Fowler College of Business
+    location: San Diego, CA
+    year: August 2021 - December 2025
+    details: GPA 3.42, Emphasis in Entrepreneurship
+
+skills:
+  - "Client Relationship Support: client onboarding, service requests, inquiry response, open-item tracking, record maintenance, confidentiality, professional communication"
+  - "Operations & Reporting: document coordination, meeting materials, process adherence, deadline management, prioritization, cross-functional collaboration"
+  - "Microsoft Office: Excel (emphasis), Word, Outlook, PowerPoint, reporting, spreadsheets, presentation materials"
+  - "Systems & Tools: Google Workspace, client database management, Shopify, Google Analytics, CRM-ready record keeping"
+  - "Professional: attention to detail, interpersonal skills, team collaboration, adaptability, composure under pressure"

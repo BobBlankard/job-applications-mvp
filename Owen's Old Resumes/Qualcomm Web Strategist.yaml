@@ -1,0 +1,88 @@
+name: Owen Doherty
+
+contact:
+  email: o.n.doherty@gmail.com
+  phone: (858) 776-6618
+  location: San Diego, CA
+  website: owendohertyworks.com
+
+summary: |
+  Web strategist and digital content leader based in San Diego with experience owning
+  web content strategy, campaign landing pages, and cross-functional web initiatives
+  across consumer technology products. Skilled in content governance, Google Analytics,
+  conversion optimization, and iterative A/B-style testing through user research.
+  Combines Figma, Adobe Creative Suite, and CMS platforms to deliver cohesive web
+  experiences that drive measurable engagement and business results.
+
+experience:
+  - title: Co-Founder / Web Strategist
+    company: BandHouse
+    location: San Diego, CA
+    start: November 2025
+    end: Present
+    bullets:
+      - Own web content strategy and site structure for a consumer discovery platform spanning 150+ events and 40+ venues across multiple markets.
+      - Partner with design and development stakeholders to maintain content quality, navigation, and brand consistency across web touchpoints.
+      - Reduced time-to-discovery by ~30% through strategic content placement, user flow optimization, and usability testing.
+      - Manage ongoing content updates, feature launches, and web performance while collaborating across product and creative functions.
+
+  - title: Founder / Web Strategist
+    company: PinHaus
+    location: San Diego, CA
+    start: March 2025
+    end: Present
+    bullets:
+      - Led web strategy and content for a consumer marketplace, planning launch narratives, onboarding flows, and discovery experiences for ~120 beta users.
+      - Drove conversion and engagement optimization through iterative user testing, improving onboarding completion from 62% to 84% and item saves by ~55%.
+      - Built and optimized campaign-style landing experiences using HTML, CSS, JavaScript, and Firebase with ~40% faster load times.
+      - Used data-driven insights from user testing and performance metrics to prioritize content and UX improvements across the web experience.
+
+  - title: Founder / Digital Marketing & Web Strategy
+    company: Ecstasy Angel
+    location: San Diego, CA
+    start: July 2020
+    end: November 2023
+    bullets:
+      - Managed full web presence and Shopify CMS content strategy including product pages, brand storytelling, and conversion-focused page optimization.
+      - Grew organic audience to 10K+ and achieved ~2.5% conversion and $10K+ revenue through strategic content, SEO, and landing page improvements.
+      - Maintained content governance standards for product updates, page edits, and user journey consistency across the digital storefront.
+      - Collaborated across branding, creative, and e-commerce workflows to deliver cohesive, on-brand web experiences.
+
+  - title: Digital Content Producer
+    company: Seed to Harvest
+    location: San Diego, CA
+    start: March 2025
+    end: May 2025
+    bullets:
+      - Produced and optimized digital content for web and social campaigns, increasing audience retention by ~25%.
+      - Applied performance insights to refine content structure, messaging pacing, and engagement across digital channels.
+
+  - title: Freelance Web Strategist
+    company: monoright.com
+    location: San Diego, CA
+    start: February 2026
+    end: Present
+    bullets:
+      - Lead web strategy and landing page development for client campaigns, from Figma concept through deployment with HTML, CSS, and JavaScript.
+      - Implement Google Analytics tracking, SEO, and conversion-driven page layouts to measure and improve campaign performance.
+      - Manage content updates, accessibility standards, and ongoing web optimization across multiple concurrent client projects.
+
+projects:
+  - title: "Seed to Harvest: A Simple Explanation of Venture Capital"
+    start: July 2020
+    end: December 2020
+    bullets:
+      - Developed visual narrative and content structure for a published book, translating complex topics into clear, audience-focused storytelling.
+
+education:
+  - degree: B.S. Business Administration (Management), Minor in Art
+    school: San Diego State University (SDSU)
+    location: San Diego, CA
+    year: August 2021 - December 2025
+    details: GPA 3.42, Emphasis in Entrepreneurship
+
+skills:
+  - "Web Strategy & Content: content strategy, web content management, landing pages, campaign pages, content governance, site structure, brand consistency, product launch web content"
+  - "Analytics & Optimization: Google Analytics, conversion optimization, KPI tracking, performance analysis, A/B testing, user testing, SEO, data-driven decision making"
+  - "Collaboration & Tools: cross-functional collaboration, stakeholder communication, Figma, Adobe Creative Suite (Photoshop, Illustrator), Shopify CMS"
+  - "Technical: HTML, CSS, JavaScript, responsive design, mobile-first web, Firebase, REST APIs"

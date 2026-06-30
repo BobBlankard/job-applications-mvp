@@ -1,0 +1,554 @@
+/* ATS-friendly template variants — single column, standard fonts, no tables/graphics */
+
+/* Shared compact base */
+.resume-page[class*='template-compact-'] {
+  font-size: 9pt;
+  line-height: 1.2;
+  padding: 0.4in 0.4in 0.35in;
+}
+
+.resume-page[class*='template-compact-'] .resume-section {
+  margin-top: 6pt;
+}
+
+.resume-page[class*='template-compact-'] .resume-entry {
+  margin-bottom: 4pt;
+}
+
+.resume-page[class*='template-compact-'] .resume-section-title {
+  font-size: 9.5pt;
+  margin-bottom: 4pt;
+}
+
+.resume-page[class*='template-compact-'] .resume-name {
+  font-size: 16pt;
+}
+
+.resume-page[class*='template-compact-'] .resume-contact {
+  font-size: 8.5pt;
+}
+
+.resume-page[class*='template-compact-'] .resume-bullets li {
+  margin-bottom: 1pt;
+}
+
+/* --- Classic family --- */
+
+.resume-page.template-classic {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 10.5pt;
+  line-height: 1.3;
+}
+
+.resume-page.template-classic .resume-name {
+  font-size: 18pt;
+}
+
+.resume-page.template-minimal {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 10.5pt;
+  line-height: 1.5;
+}
+
+.resume-page.template-minimal .resume-header {
+  margin-bottom: 16pt;
+}
+
+.resume-page.template-minimal .resume-name {
+  font-size: 17pt;
+  font-weight: 400;
+  letter-spacing: 0.8pt;
+}
+
+.resume-page.template-minimal .resume-section {
+  margin-top: 14pt;
+}
+
+.resume-page.template-minimal .resume-section-title {
+  font-weight: 600;
+  letter-spacing: 0.4pt;
+  border-bottom-width: 0.5pt;
+  text-transform: uppercase;
+}
+
+.resume-page.template-traditional {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 10.5pt;
+  line-height: 1.32;
+}
+
+.resume-page.template-traditional .resume-name {
+  font-size: 18pt;
+  font-weight: normal;
+}
+
+.resume-page.template-traditional .resume-section-title {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 4pt;
+  text-transform: none;
+  font-variant: small-caps;
+  letter-spacing: 1pt;
+}
+
+.resume-page.template-traditional .resume-section-title::after {
+  content: '';
+  display: block;
+  border-bottom: 0.75pt solid #222;
+  margin-top: 2pt;
+  margin-bottom: 2pt;
+}
+
+.resume-page.template-traditional .resume-section-title::before {
+  content: '';
+  display: block;
+  border-bottom: 0.25pt solid #222;
+  margin-bottom: 2pt;
+}
+
+.resume-page.template-clean {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.35;
+}
+
+.resume-page.template-clean .resume-name {
+  font-size: 17pt;
+  text-align: left;
+}
+
+.resume-page.template-clean .resume-header {
+  text-align: left;
+}
+
+.resume-page.template-clean .resume-section-title {
+  text-transform: none;
+  letter-spacing: 0.2pt;
+  font-size: 11pt;
+}
+
+.resume-page.template-clean .resume-entry-line-meta {
+  font-size: 9pt;
+}
+
+.resume-page.template-clean .resume-entry-dates {
+  font-weight: normal;
+  font-size: 9pt;
+}
+
+.resume-page.template-standard {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 10.5pt;
+  line-height: 1.3;
+}
+
+.resume-page.template-standard .resume-name {
+  font-size: 18pt;
+}
+
+.resume-page.template-formal {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 11pt;
+  line-height: 1.35;
+}
+
+.resume-page.template-formal .resume-name {
+  font-size: 19pt;
+  letter-spacing: 1.2pt;
+}
+
+.resume-page.template-formal .resume-section-title {
+  letter-spacing: 1.5pt;
+  font-size: 10.5pt;
+  border-bottom-width: 1pt;
+}
+
+.resume-page.template-simple {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.35;
+}
+
+.resume-page.template-simple .resume-name {
+  font-size: 17pt;
+}
+
+.resume-page.template-simple .resume-section-title {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 5pt;
+  letter-spacing: 1pt;
+}
+
+.resume-page.template-simple .resume-bullets {
+  list-style-type: circle;
+}
+
+.resume-page.template-executive {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 10.5pt;
+  line-height: 1.25;
+}
+
+.resume-page.template-executive .resume-name {
+  font-size: 20pt;
+  letter-spacing: 0.5pt;
+}
+
+.resume-page.template-executive .resume-section {
+  margin-top: 8pt;
+}
+
+.resume-page.template-executive .resume-section-title {
+  font-size: 10pt;
+  letter-spacing: 0.8pt;
+}
+
+.resume-page.template-executive .resume-contact {
+  font-size: 9pt;
+  max-width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.resume-page.template-academic {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 10.5pt;
+  line-height: 1.35;
+}
+
+.resume-page.template-academic .resume-header {
+  text-align: left;
+}
+
+.resume-page.template-academic .resume-name {
+  font-size: 17pt;
+}
+
+.resume-page.template-academic .resume-contact {
+  text-align: left;
+}
+
+.resume-page.template-academic .resume-section-title {
+  text-transform: none;
+  font-variant: small-caps;
+  letter-spacing: 0.5pt;
+}
+
+.resume-page.template-professional {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.35;
+}
+
+.resume-page.template-professional .resume-name {
+  font-size: 17pt;
+}
+
+.resume-page.template-professional .resume-section-title {
+  color: #444;
+  border-bottom: none;
+  background: #f0f0f0;
+  padding: 3pt 6pt;
+  margin-bottom: 5pt;
+  letter-spacing: 0.5pt;
+}
+
+.resume-page.template-refined {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 10.5pt;
+  line-height: 1.4;
+}
+
+.resume-page.template-refined .resume-name {
+  font-size: 17pt;
+  font-weight: normal;
+  letter-spacing: 0.5pt;
+}
+
+.resume-page.template-refined .resume-section-title {
+  font-variant: small-caps;
+  letter-spacing: 0.8pt;
+  text-transform: none;
+  font-size: 11pt;
+  border-bottom: none;
+  margin-bottom: 6pt;
+}
+
+.resume-page.template-straightforward {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.3;
+}
+
+.resume-page.template-straightforward .resume-name {
+  font-size: 16pt;
+}
+
+.resume-page.template-straightforward .resume-bullets {
+  list-style-type: square;
+}
+
+.resume-page.template-timeless {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 10.5pt;
+  line-height: 1.32;
+}
+
+.resume-page.template-timeless .resume-name {
+  font-size: 18pt;
+}
+
+.resume-page.template-timeless .resume-section-title {
+  border-bottom-style: dotted;
+  border-bottom-width: 1pt;
+}
+
+.resume-page.template-calibri-modern {
+  font-family: Calibri, 'Segoe UI', Arial, Helvetica, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.35;
+}
+
+.resume-page.template-calibri-modern .resume-name {
+  font-size: 18pt;
+}
+
+.resume-page.template-calibri-modern .resume-section {
+  border-left: 2pt solid #555;
+  padding-left: 8pt;
+  margin-left: 0;
+}
+
+.resume-page.template-calibri-modern .resume-section-title {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 4pt;
+  text-transform: none;
+  font-size: 11pt;
+}
+
+.resume-page.template-calibri-modern .resume-bullets {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.resume-page.template-calibri-modern .resume-bullets li::before {
+  content: '– ';
+  font-weight: bold;
+}
+
+/* --- Compact family --- */
+
+.resume-page.template-compact-classic {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.resume-page.template-compact-minimal {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.15;
+}
+
+.resume-page.template-compact-minimal .resume-section-title {
+  border-bottom-width: 0.5pt;
+  font-weight: 600;
+}
+
+.resume-page.template-compact-minimal .resume-section {
+  margin-top: 5pt;
+}
+
+.resume-page.template-compact-professional {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.resume-page.template-compact-professional .resume-section-title {
+  color: #555;
+  font-size: 9pt;
+  letter-spacing: 0.6pt;
+}
+
+.resume-page.template-compact-navy {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.resume-page.template-compact-navy .resume-section-title {
+  color: #1a365d;
+  border-bottom-color: #1a365d;
+}
+
+.resume-page.template-compact-teal {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.resume-page.template-compact-teal .resume-name {
+  color: #2c7a7b;
+}
+
+.resume-page.template-compact-teal .resume-section-title {
+  color: #2c7a7b;
+  border-bottom-color: #2c7a7b;
+}
+
+.resume-page.template-compact-executive {
+  font-family: 'Times New Roman', Times, serif;
+  line-height: 1.18;
+}
+
+.resume-page.template-compact-executive .resume-name {
+  font-size: 17pt;
+}
+
+.resume-page.template-compact-executive .resume-section-title {
+  font-size: 9pt;
+  letter-spacing: 0.7pt;
+}
+
+/* --- Accent family --- */
+
+.resume-page.template-navy-accent {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 10.5pt;
+  line-height: 1.3;
+}
+
+.resume-page.template-navy-accent .resume-name {
+  font-size: 18pt;
+}
+
+.resume-page.template-navy-accent .resume-section-title {
+  color: #1a365d;
+  border-bottom-color: #1a365d;
+  border-bottom-width: 1pt;
+}
+
+.resume-page.template-teal-professional {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.35;
+}
+
+.resume-page.template-teal-professional .resume-name {
+  font-size: 18pt;
+  color: #2c7a7b;
+}
+
+.resume-page.template-teal-professional .resume-section-title {
+  color: #2c7a7b;
+  border-bottom-color: #2c7a7b;
+}
+
+.resume-page.template-charcoal-modern {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.35;
+}
+
+.resume-page.template-charcoal-modern .resume-name {
+  font-size: 17pt;
+}
+
+.resume-page.template-charcoal-modern .resume-section {
+  border-left: 3pt solid #2d3748;
+  padding-left: 8pt;
+  margin-left: 0;
+}
+
+.resume-page.template-charcoal-modern .resume-section-title {
+  color: #2d3748;
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 4pt;
+  text-transform: none;
+  font-size: 11pt;
+}
+
+.resume-page.template-burgundy-classic {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 10.5pt;
+  line-height: 1.3;
+}
+
+.resume-page.template-burgundy-classic .resume-name {
+  font-size: 18pt;
+  color: #742a2a;
+}
+
+.resume-page.template-burgundy-classic .resume-header {
+  border-bottom: 2pt solid #742a2a;
+  padding-bottom: 6pt;
+}
+
+.resume-page.template-burgundy-classic .resume-section-title {
+  border-bottom-color: #999;
+  text-transform: none;
+  font-variant: small-caps;
+  letter-spacing: 0.5pt;
+}
+
+.resume-page.template-forest-executive {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 10.5pt;
+  line-height: 1.28;
+}
+
+.resume-page.template-forest-executive .resume-name {
+  font-size: 19pt;
+}
+
+.resume-page.template-forest-executive .resume-section-title {
+  border-bottom: 2pt solid #276749;
+  color: #111;
+  padding-bottom: 3pt;
+}
+
+.resume-page.template-slate-professional {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.35;
+}
+
+.resume-page.template-slate-professional .resume-name {
+  font-size: 17pt;
+}
+
+.resume-page.template-slate-professional .resume-section-title {
+  color: #4a5568;
+  border-bottom-color: #cbd5e0;
+  border-bottom-width: 0.5pt;
+  font-weight: 700;
+  text-transform: none;
+  font-size: 11pt;
+}
+
+.resume-page.template-indigo-accent {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.35;
+}
+
+.resume-page.template-indigo-accent .resume-name {
+  font-size: 18pt;
+  color: #434190;
+}
+
+.resume-page.template-indigo-accent .resume-header {
+  border-bottom: 1pt solid #434190;
+  padding-bottom: 5pt;
+}
+
+.resume-page.template-indigo-accent .resume-section {
+  border-left: 2.5pt solid #434190;
+  padding-left: 8pt;
+}
+
+.resume-page.template-indigo-accent .resume-section-title {
+  color: #434190;
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 4pt;
+  text-transform: none;
+  font-size: 11pt;
+  font-weight: 700;
+}

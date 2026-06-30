@@ -1,0 +1,168 @@
+/* ATS-friendly resume preview — single column, system serif, no graphics */
+
+.pdf-export-root {
+  position: fixed;
+  left: -10000px;
+  top: 0;
+  width: 8.5in;
+  overflow: visible;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.resume-page {
+  width: 8.5in;
+  min-height: 11in;
+  background: #fff;
+  color: #111;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+  padding: 0.5in 0.5in 0.45in;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 10.5pt;
+  line-height: 1.3;
+  flex-shrink: 0;
+  position: relative;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+.resume-page.page-overflow::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 11in;
+  height: 4px;
+  background: repeating-linear-gradient(
+    90deg,
+    #ef4444 0,
+    #ef4444 8px,
+    transparent 8px,
+    transparent 16px
+  );
+  pointer-events: none;
+}
+
+.resume-content {
+  overflow: visible;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.resume-header {
+  text-align: center;
+  margin-bottom: 12pt;
+  padding-bottom: 2pt;
+}
+
+.resume-name {
+  font-size: 18pt;
+  font-weight: bold;
+  letter-spacing: 0.3pt;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.resume-contact {
+  font-size: 9.5pt;
+  margin-top: 4pt;
+  color: #222;
+  line-height: 1.35;
+}
+
+.resume-section {
+  margin-top: 10pt;
+}
+
+.resume-section:first-of-type {
+  margin-top: 0;
+}
+
+.resume-section-title {
+  font-size: 11pt;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.6pt;
+  border-bottom: 0.75pt solid #222;
+  padding-bottom: 2pt;
+  margin: 0 0 6pt;
+  line-height: 1.2;
+}
+
+.resume-summary {
+  text-align: justify;
+  margin: 0;
+}
+
+.resume-entry {
+  margin-bottom: 7pt;
+}
+
+.resume-entry:last-child {
+  margin-bottom: 0;
+}
+
+/* Linear entry lines — DOM order matches reading order for PDF/ATS text extraction */
+.resume-entry-line {
+  margin: 0;
+}
+
+.resume-entry-line-title {
+  line-height: 1.25;
+}
+
+.resume-entry-line-meta {
+  font-style: italic;
+  font-size: 9.5pt;
+  line-height: 1.3;
+  margin-top: 1pt;
+  color: #222;
+}
+
+.resume-entry-title {
+  font-weight: bold;
+}
+
+.resume-entry-dates {
+  white-space: nowrap;
+  font-weight: normal;
+}
+
+.resume-entry-meta-sep {
+  font-style: italic;
+}
+
+.resume-bullets {
+  margin: 4pt 0 0;
+  padding: 0 0 0 18pt;
+  list-style-type: disc;
+  list-style-position: outside;
+}
+
+.resume-bullets li {
+  margin-bottom: 2pt;
+  padding-left: 2pt;
+}
+
+.resume-bullets li:last-child {
+  margin-bottom: 0;
+}
+
+.resume-skill-line {
+  margin: 0 0 3pt;
+}
+
+.resume-skill-line:last-child {
+  margin-bottom: 0;
+}
+
+.resume-details {
+  font-size: 9.5pt;
+  margin: 2pt 0 0;
+}
+
+.resume-error {
+  color: #b91c1c;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12pt;
+}

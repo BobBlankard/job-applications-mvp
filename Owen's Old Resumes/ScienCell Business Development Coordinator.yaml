@@ -1,0 +1,87 @@
+name: Owen Doherty
+
+contact:
+  email: o.n.doherty@gmail.com
+  phone: (858) 776-6618
+  location: San Diego, CA
+  website: owendohertyworks.com
+
+summary: |
+  San Diego-based business professional and SDSU graduate with experience in market
+  research, B2B client support, proposal coordination, and cross-functional outreach
+  in fast-paced environments. Skilled at gathering customer insights, preparing
+  presentations and marketing materials, tracking leads and metrics, and supporting
+  events and growth initiatives. Strong communicator with an entrepreneurial mindset
+  and ability to learn technical product information quickly.
+
+experience:
+  - title: Freelance Business Development & Client Services
+    company: monoright.com
+    location: San Diego, CA
+    start: February 2026
+    end: Present
+    bullets:
+      - Support multiple B2B client accounts with responsive communication, proposal coordination, and timely follow-up on project deliverables.
+      - Prepare client-facing presentations, landing pages, and marketing materials aligned with business goals and brand messaging.
+      - Track campaign performance and report metrics using Google Analytics to inform outreach and business development decisions.
+      - Manage project timelines, documentation, and customer requests across concurrent accounts with strong attention to detail.
+
+  - title: Co-Founder / Business Development
+    company: BandHouse
+    location: San Diego, CA
+    start: November 2025
+    end: Present
+    bullets:
+      - Conduct market research across live music and event discovery, identifying opportunities across 150+ events and 40+ venues in test markets.
+      - Nurture relationships with venue and community partners while coordinating outreach content and engagement initiatives in San Diego.
+      - Collaborate across product, marketing, and creative functions to align messaging, gather feedback, and support launch priorities.
+      - Plan and support event-related outreach, maintaining accurate market data and timely updates across web touchpoints.
+
+  - title: Founder / Business Development & Customer Relations
+    company: Ecstasy Angel
+    location: San Diego, CA
+    start: July 2020
+    end: November 2023
+    bullets:
+      - Identified and pursued growth opportunities for a direct-to-consumer brand through market research, trend analysis, and customer feedback.
+      - Delivered responsive B2C customer service including inquiries, order follow-up, and relationship building that supported repeat business.
+      - Prepared product messaging, marketing materials, and launch presentations across Shopify, web, and social channels.
+      - Grew organic audience to 10K+ and achieved $10K+ in revenue through organized outreach and data-informed decision making.
+
+  - title: Digital Content & Outreach Coordinator
+    company: Seed to Harvest
+    location: San Diego, CA
+    start: March 2025
+    end: May 2025
+    bullets:
+      - Supported digital outreach campaigns by producing and scheduling content for web and social channels.
+      - Applied audience and performance insights to refine messaging and improve engagement across outreach initiatives.
+
+  - title: Founder / Market Research
+    company: PinHaus
+    location: San Diego, CA
+    start: March 2025
+    end: Present
+    bullets:
+      - Conducted user interviews and stakeholder walkthroughs to gather market feedback and identify product and positioning opportunities.
+
+projects:
+  - title: "Seed to Harvest: A Simple Explanation of Venture Capital"
+    start: July 2020
+    end: December 2020
+    bullets:
+      - Researched complex technical topics and translated findings into clear, audience-focused content for a published book.
+
+education:
+  - degree: B.S. Business Administration (Management), Minor in Art
+    school: San Diego State University (SDSU), Fowler College of Business
+    location: San Diego, CA
+    year: August 2021 - December 2025
+    details: GPA 3.42, Emphasis in Entrepreneurship
+
+skills:
+  - "Business Development: market research, competitive analysis, lead follow-up, proposal coordination, presentations, outreach planning, relationship building"
+  - "Client Service & Communication: B2B and B2C customer support, responsiveness, cross-functional collaboration, stakeholder communication, professionalism"
+  - "Analytics & Reporting: Google Analytics, performance metrics, data tracking, business reporting, informed decision making"
+  - "Events & Outreach: event coordination, conference support, webinar content, community engagement, vendor and partner coordination"
+  - "Tools: Microsoft Office (Word, Excel, PowerPoint, Outlook), Google Workspace, Shopify, Adobe Creative Suite, HTML/CSS"

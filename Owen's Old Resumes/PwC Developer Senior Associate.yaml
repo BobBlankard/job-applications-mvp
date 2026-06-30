@@ -1,0 +1,80 @@
+name: Owen Doherty
+
+contact:
+  email: o.n.doherty@gmail.com
+  phone: (858) 776-6618
+  location: San Diego, CA
+  website: owendohertyworks.com
+
+summary: |
+  Software developer with 3+ years building web and mobile applications using
+  JavaScript, React, and REST APIs. Experienced designing, coding, and testing
+  digital products that improve business performance and user experience. Combines
+  analytical problem-solving with client-focused delivery through founder-led
+  products and freelance development work. Proficient with AI-assisted development
+  tools to accelerate quality software delivery.
+
+experience:
+  - title: Founder / Software Developer
+    company: PinHaus
+    location: San Diego, CA
+    start: March 2025
+    end: Present
+    bullets:
+      - Designed, coded, and tested a production marketplace application using JavaScript, Swift, and Firebase, supporting ~120 beta users with ~35% 7-day retention.
+      - Implemented RESTful APIs and optimized database queries, reducing application load times by ~40%.
+      - Built responsive frontend systems for dynamic content rendering and user interaction, increasing engagement and item saves by ~55%.
+      - Conducted iterative testing and debugging across 20+ user sessions, improving onboarding completion from 62% to 84%.
+
+  - title: Co-Founder / Software Developer
+    company: BandHouse
+    location: San Diego, CA
+    start: November 2025
+    end: Present
+    bullets:
+      - Developed a web and mobile platform for live event discovery, aggregating 150+ events and 40+ venues across test markets.
+      - Built responsive web interfaces and integrated third-party APIs for map-based data visualization, reducing user discovery time by ~30%.
+      - Collaborated across product and engineering functions to translate business requirements into functional software solutions.
+      - Performed testing and quality checks to validate performance, usability, and reliability before release.
+
+  - title: Software Developer (Freelance)
+    company: monoright.com
+    location: San Diego, CA
+    start: February 2026
+    end: Present
+    bullets:
+      - Deliver tailored web applications for clients from requirements gathering through deployment using HTML, CSS, JavaScript, and modern tooling.
+      - Anticipate client needs, communicate technical options clearly, and iterate based on feedback to deliver solutions aligned with business goals.
+      - Implement performance optimization, clean code structure, and maintainable front-end architecture across client projects.
+
+  - title: Founder / Software Developer
+    company: Ecstasy Angel
+    location: San Diego, CA
+    start: July 2020
+    end: November 2023
+    bullets:
+      - Built and launched an e-commerce platform integrated with third-party systems, generating $9K+ in revenue and ~2.5% conversion.
+      - Developed frontend interfaces and managed product data, payments, and customer workflows across the digital storefront.
+      - Applied problem-solving and analytical thinking to improve platform performance, user experience, and business outcomes.
+
+projects:
+  - title: Portfolio & Software Projects
+    company: owendohertyworks.com
+    start: February 2026
+    end: Present
+    bullets:
+      - Designed and developed a responsive web application using JavaScript, HTML, CSS, and AI-assisted development workflows.
+      - Documented software projects demonstrating full development lifecycle from concept through testing and deployment.
+
+education:
+  - degree: B.S. Business Administration (Management), Minor in Art
+    school: San Diego State University (SDSU)
+    location: San Diego, CA
+    year: August 2021 - December 2025
+    details: GPA 3.42, Emphasis in Entrepreneurship
+
+skills:
+  - "Languages: JavaScript, TypeScript, HTML, CSS, Swift, SQL"
+  - "Frameworks & Tools: React, Next.js, Firebase, REST APIs, GitHub, VS Code, Cursor"
+  - "Development: application development, API integration, debugging, software testing, performance optimization, object-oriented design concepts"
+  - "Professional: client communication, cross-functional collaboration, problem solving, agile workflows, AI-assisted development"

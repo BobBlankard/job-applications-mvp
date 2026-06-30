@@ -1,0 +1,95 @@
+name: Owen Doherty
+
+contact:
+  email: o.n.doherty@gmail.com
+  phone: (858) 776-6618
+  location: San Diego, CA
+  website: owendohertyworks.com
+
+summary: |
+  Web developer building responsive, accessible sites from Figma through deployment
+  with HTML, CSS, and JavaScript. Experienced in CMS content management (Shopify),
+  WCAG and Section 508 accessibility standards, UX best practices, SEO, and Google
+  Analytics. Seeking to apply these skills to maintain and improve university web
+  properties as an SDSU alumnus based in San Diego.
+
+experience:
+  - title: Co-Founder / Web Developer
+    company: BandHouse
+    location: San Diego, CA
+    start: November 2025
+    end: Present
+    bullets:
+      - Developed and maintained a mobile-first web platform for live music discovery, supporting 150+ events and 40+ venues.
+      - Designed site structure, navigation, and user flows to improve usability and reduce time-to-event discovery by ~30%.
+      - Conducted user testing and implemented WCAG accessibility and UX improvements across web interfaces.
+      - Managed ongoing CMS-style content updates, feature iterations, and site performance while collaborating on design and development.
+
+  - title: Founder / Web Developer
+    company: PinHaus
+    location: San Diego, CA
+    start: March 2025
+    end: Present
+    bullets:
+      - Designed and developed a responsive consumer marketplace using HTML, CSS, JavaScript, and Firebase.
+      - Built mobile-responsive interfaces and improved load times by ~40% through efficient data handling and performance optimization.
+      - Created a board-based navigation system that increased engagement and item saves by ~55%.
+      - Conducted user testing and refined onboarding and site structure, improving completion rates from 62% to 84%.
+
+  - title: YouTube Podcast Editor
+    company: Seed to Harvest
+    location: San Diego, CA
+    start: March 2025
+    end: May 2025
+    bullets:
+      - Produced and optimized digital content for web and social platforms, increasing retention by ~25%.
+      - Focused on content structure, pacing, and audience engagement using performance insights.
+
+  - title: Club Supervisor
+    company: High Country West
+    location: San Diego, CA
+    start: March 2021
+    end: July 2023
+    bullets:
+      - Managed operations and coordinated services for 10,000+ residents, handling scheduling, communication, and support.
+
+  - title: Founder / Web Developer
+    company: Ecstasy Angel
+    location: San Diego, CA
+    start: July 2020
+    end: November 2023
+    bullets:
+      - Designed and managed an e-commerce website on Shopify CMS, handling product pages, site content, branding, and conversion optimization.
+      - Performed ongoing CMS content management including product updates, page edits, and user flow improvements across the storefront.
+      - Grew an audience to 10K+ and optimized user flows and product pages, achieving ~2.5% conversion and $10K+ in revenue.
+
+projects:
+  - title: "Seed to Harvest: A Simple Explanation of Venture Capital"
+    start: July 2020
+    end: December 2020
+    bullets:
+      - Illustrated and designed a children's book focused on visual storytelling and structured content layout.
+
+  - title: Freelance Web Developer
+    company: monoright.com
+    location: San Diego, CA
+    start: February 2026
+    end: Present
+    bullets:
+      - Built custom responsive websites from Figma to deployment using HTML, CSS, JavaScript, and AI-assisted development tools.
+      - Implemented SEO, Google Analytics tracking, performance enhancements, and conversion-driven layouts for client sites.
+      - Managed site content updates, accessibility improvements, and ongoing web maintenance for freelance clients.
+
+education:
+  - degree: B.S. Business Administration (Management), Minor in Art
+    school: San Diego State University (SDSU)
+    location: San Diego, CA
+    year: August 2021 - December 2025
+    details: GPA 3.42, Emphasis in Entrepreneurship
+
+skills:
+  - "Web Development: HTML, CSS, JavaScript, React, Next.js, responsive design, mobile-first development, REST APIs"
+  - "CMS & Content: Shopify CMS, content management, site structure, content updates, site maintenance"
+  - "Accessibility & Analytics: WCAG, Section 508, accessibility compliance, Google Analytics, SEO, user testing"
+  - "Design Tools: Figma, Adobe Creative Suite (Photoshop, Illustrator), Shopify"
+  - "Backend & Tools: Firebase, Cloudflare, GitHub, Cursor"

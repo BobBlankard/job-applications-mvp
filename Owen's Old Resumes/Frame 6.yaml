@@ -1,0 +1,77 @@
+name: Owen Doherty
+
+contact:
+  email: o.n.doherty@gmail.com
+  phone: (858) 776-6618
+  website: owendohertyworks.com
+
+summary: |
+  Product designer with experience shaping consumer marketplaces and cultural discovery products through styling, visual direction, and UI/UX. Skilled in user research, Figma prototyping, and end-to-end creative direction—driving measurable gains in retention, engagement, and save rates across iOS and web platforms.
+
+experience:
+  - title: Founder / Developer
+    company: PinHaus
+    start: March 2025
+    end: Present
+    bullets:
+      - Designed and developed a fashion-focused marketplace platform centered on styling, outfit curation, and trend discovery, reaching ~120 beta users with ~35% 7-day retention.
+      - Translated cultural trends and consumer behavior into visual product systems, including board-style outfit curation that increased item save rate by ~55%.
+      - Conducted 20+ user tests and refined visual flows, improving onboarding clarity and overall user experience.
+
+  - title: Co-Founder / Developer
+    company: BandHouse
+    start: Nov 2025
+    end: Present
+    bullets:
+      - Built a platform focused on cultural discovery within local music and creative scenes, aggregating 150+ events and 40+ venues.
+      - Led visual direction of feed and map-based layouts, improving clarity and discovery speed by ~30% in testing.
+      - Conducted trend and community research across music, streetwear, and youth culture to inform product direction.
+
+  - title: Founder
+    company: Ecstasy Angel
+    start: July 2020
+    end: November 2023
+    bullets:
+      - Created and grew a fashion and art-driven brand to 10K+ followers with ~8–12% engagement rate.
+      - Designed and sold apparel and visual products, generating $9K+ in revenue.
+      - Managed end-to-end creative direction including styling, branding, and product presentation.
+
+  - title: Youtube Podcast Editor
+    company: Seed to Harvest
+    start: March 2025
+    end: May 2025
+    bullets:
+      - Produced visual content with a focus on storytelling, pacing, and audience engagement, increasing retention by ~25%.
+      - Developed strong visual communication skills through editing and sequencing content for clarity and impact.
+
+  - title: Club Supervisor
+    company: High Country West
+    start: March 2021
+    end: July 2023
+    bullets:
+      - Managed front-line operations for 10,000 residents, handling inbound calls, scheduling appointments, and coordinating daily services across teams.
+
+projects:
+  - title: "Seed to Harvest: A Simple Explanation of Venture Capital"
+    start: July 2020
+    end: December 2020 (4 Months)
+    bullets:
+      - Illustrated full children's book explaining venture capital concepts through visual storytelling.
+      - Developed character design, environments, and visual narrative structure.
+
+  - title: Portfolio Website
+    start: February 2026
+    bullets:
+      - Designed and developed a portfolio platform using Cursor, HTML, and JavaScript to showcase product work, visual design, and interactive projects.
+
+education:
+  - degree: B.S. Business Administration (Management), Minor in Art
+    school: San Diego State University
+    year: August 2021 - December 2025
+    details: GPA 3.42, Emphasis in Entrepreneurship
+
+skills:
+  - "Skills: Product Design, UI/UX Design, Branding & Identity, Concept Development, User Flows, Prototyping, Visual Design, iOS Development, Web Development"
+  - "Design Tools: Figma, Illustrator, Photoshop, Blender, Unity"
+  - "Front-End: HTML / CSS / JavaScript, React, Next.js, Swift"
+  - "Backend: Firebase, REST APIs, Cloudflare"

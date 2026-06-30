@@ -1,0 +1,74 @@
+name: Owen Doherty
+
+contact:
+  email: o.n.doherty@gmail.com
+  phone: (858) 776-6618
+  location: San Diego, CA
+  website: owendohertyworks.com
+  linkedin: linkedin.com/in/owendoherty
+
+summary: |
+  San Diego-based SDSU Fowler College of Business graduate with hands-on experience
+  supporting business requirements, process documentation, and cross-functional
+  coordination for software-enabled workflows. Organized and analytically minded with
+  a track record of tracking requests, prioritizing open items, maintaining accurate
+  data, and communicating clearly with technical and non-technical stakeholders.
+  Eager to contribute to internal tools, reporting, and process improvement in an
+  on-site Poway environment.
+
+experience:
+  - title: Freelance Business Process & Client Solutions Support
+    company: monoright.com
+    location: San Diego, CA
+    start: February 2026
+    end: Present
+    bullets:
+      - Gather and document business requirements from stakeholders; translate needs into clear deliverables, timelines, and implementation priorities.
+      - Track tool requests, revisions, and project status across concurrent accounts with organized documentation and consistent follow-through.
+      - Prepare reporting summaries and performance metrics using Google Analytics to support analytics-style updates and stakeholder decisions.
+      - Provide responsive communication and walkthrough-style guidance to help end users understand processes, changes, and next steps.
+
+  - title: Co-Founder / Operations & Internal Tools
+    company: BandHouse
+    location: San Diego, CA
+    start: November 2025
+    end: Present
+    bullets:
+      - Maintain accurate project planning and resource data across 150+ events and 40+ venues to support reporting and cross-functional priorities.
+      - Coordinate between product, engineering, and operations stakeholders to prioritize feature requests, improvements, upgrades, and open workflow items.
+      - Document internal processes and keep records organized so the team can track status updates, recurring tasks, and completion of assigned work.
+      - Gather end-user feedback and help align tool priorities with business needs across a fast-paced, cross-functional environment.
+
+  - title: Founder / Product Operations & Requirements
+    company: PinHaus
+    location: San Diego, CA
+    start: March 2025
+    end: Present
+    bullets:
+      - Collected user and stakeholder feedback through interviews and walkthroughs to inform requirements and process improvement opportunities.
+      - Managed operational priorities across a pre-launch internal software product, documenting workflows and lessons applied to later development at BandHouse.
+
+  - title: Founder / Operations & Process Documentation
+    company: Ecstasy Angel
+    location: San Diego, CA
+    start: July 2020
+    end: November 2023
+    bullets:
+      - Documented business processes, customer records, and operational workflows with attention to accuracy, confidentiality, and consistency.
+      - Tracked budgets, vendor costs, and business metrics in Excel while managing inquiries, recurring tasks, and day-to-day operational priorities.
+      - Prepared product documentation and process materials across e-commerce, fulfillment, and customer communication workflows.
+      - Supported growth through organized request tracking, prioritization, and reliable follow-through on open items across the business.
+
+education:
+  - degree: B.S. Business Administration (Management), Minor in Art
+    school: San Diego State University (SDSU), Fowler College of Business
+    location: San Diego, CA
+    year: August 2021 - December 2025
+    details: GPA 3.42, Emphasis in Entrepreneurship
+
+skills:
+  - "Business Requirements & Process: requirements analysis, business requirements documentation, process improvements, stakeholder interviews, implementation support, systems requirements coordination"
+  - "Project & Tool Management: request prioritization, feature tracking, status updates, recurring task management, bug fix coordination, cross-functional workflows"
+  - "Data & Reporting: resource and project planning data, performance metrics, Google Analytics, Excel reporting, dashboards (familiar), data accuracy, reconciliation"
+  - "Tools & Documentation: Microsoft Office (Excel, Word, PowerPoint, Outlook), Google Workspace, internal documentation, end-user training support"
+  - "Professional: interpersonal communication, confidentiality, self-motivated, independent and team collaboration, on-site Poway/San Diego"

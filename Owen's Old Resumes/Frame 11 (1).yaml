@@ -1,0 +1,81 @@
+name: Owen Doherty
+
+contact:
+  email: o.n.doherty@gmail.com
+  phone: (858) 776-6618
+  website: owendohertyworks.com
+
+summary: |
+  Web applications developer building full-stack consumer platforms with integrated mobile and iOS experiences using JavaScript, Firebase, and modern frontend frameworks. Combines user testing, accessibility standards, and iterative UX design to improve discovery speed, load performance, and conversion across marketplace and event discovery products.
+
+experience:
+  - title: Co-Founder / Developer
+    company: BandHouse
+    start: Nov 2025
+    end: Present
+    bullets:
+      - Developed and maintained a web platform supporting mobile and iOS experiences for live music discovery, supporting 150+ events and 40+ venues.
+      - Designed site structure, navigation, and user flows to improve usability and reduce time-to-event discovery by ~30%.
+      - Conducted user testing and implemented accessibility and UX improvements.
+      - Managed ongoing content updates, feature iterations, and platform performance while collaborating on design and development decisions.
+
+  - title: Founder / Developer
+    company: PinHaus
+    start: March 2025
+    end: Present
+    bullets:
+      - Designed and developed a web-based marketplace platform with integrated mobile (iOS) experience using HTML, CSS, JavaScript, and Firebase.
+      - Built mobile-optimized interfaces and improved load times by ~40% through efficient data handling.
+      - Conducted user testing and iterated on onboarding and interface design.
+      - Conducted user testing and refined onboarding and site structure, improving completion rates from 62% to 84%.
+
+  - title: Youtube Podcast Editor
+    company: Seed to Harvest
+    start: March 2025
+    end: May 2025
+    bullets:
+      - Produced and optimized digital content for web and social platforms, increasing retention by ~25%.
+      - Focused on content structure, pacing, and audience engagement using performance insights.
+
+  - title: Club Supervisor
+    company: High Country West
+    start: March 2021
+    end: July 2023
+    bullets:
+      - Managed operations and coordinated services for 10,000+ residents, handling scheduling, communication, and support.
+      - Maintained organized workflows in a fast-paced environment and assisted team members with daily operations.
+
+  - title: Founder
+    company: Ecstasy Angel
+    start: July 2020
+    end: November 2023
+    bullets:
+      - Designed and managed an e-commerce website focused on branding, user experience, and conversion optimization.
+      - Grew an audience to 10K+ and improved engagement through digital content and site design.
+      - Optimized user flows and product pages, achieving ~2.5% conversion and generating $10K+ in revenue.
+
+projects:
+  - title: "Seed to Harvest: A Simple Explanation of Venture Capital"
+    start: July 2020
+    end: December 2020 (4 Months)
+    bullets:
+      - Illustrated and designed a children's book focused on visual storytelling and structured content layout.
+
+  - title: Portfolio Website
+    company: owendohertyworks.com
+    start: February 2026
+    bullets:
+      - Designed and developed a responsive portfolio website using HTML, CSS, and JavaScript, focusing on accessibility, clean UI, and intuitive navigation.
+
+education:
+  - degree: B.S. Business Administration (Management), Minor in Art
+    school: San Diego State University
+    year: August 2021 - December 2025
+    details: GPA 3.42, Emphasis in Entrepreneurship
+
+skills:
+  - "Skills: Web Design, Web Development, UI/UX Design, CMS, Content Management Systems, WCAG, Accessibility & Usability, User Research & Testing, User Flows, Prototyping, Visual Design, iOS Development"
+  - "Design Tools: Figma, Illustrator, Photoshop, Blender, Unity"
+  - "Front-End: HTML / CSS / JavaScript, React, Next.js, Swift"
+  - "AI Tools: Cursor, Claude, ChatGPT"
+  - "Backend: Firebase, REST APIs, Cloudflare"

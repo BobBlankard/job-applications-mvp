@@ -1,0 +1,76 @@
+name: Owen Doherty
+
+contact:
+  email: o.n.doherty@gmail.com
+  phone: (858) 776-6618
+  location: San Diego, CA
+  website: owendohertyworks.com
+
+summary: |
+  San Diego-based analyst-minded business graduate with experience supporting client
+  requests, performance reporting, and data-driven deliverables under tight deadlines.
+  Skilled in tracking metrics, maintaining accurate records, reconciling information
+  across sources, and collaborating with cross-functional teams. Detail-oriented
+  self-starter with a finance-adjacent background and strong communication skills.
+
+experience:
+  - title: Freelance Client Services & Reporting
+    company: monoright.com
+    location: San Diego, CA
+    start: February 2026
+    end: Present
+    bullets:
+      - Manage assigned client requests, reporting deadlines, and deliverables across multiple accounts with consistent follow-through.
+      - Compile performance metrics and reporting summaries using Google Analytics to support timely client updates.
+      - Maintain organized project documentation, revisions, and status tracking while coordinating across concurrent assignments.
+      - Deliver responsive client communication and accurate final outputs aligned with requested formats and standards.
+
+  - title: Co-Founder / Operations & Data
+    company: BandHouse
+    location: San Diego, CA
+    start: November 2025
+    end: Present
+    bullets:
+      - Maintain accurate event and venue datasets across 150+ events and 40+ venues, ensuring consistency across reporting touchpoints.
+      - Support weekly and launch-cycle deliverables by coordinating information across product, marketing, and creative stakeholders.
+      - Resolve data discrepancies and workflow bottlenecks proactively to keep priorities and deadlines on track.
+
+  - title: Founder / Operations & Client Service
+    company: Ecstasy Angel
+    location: San Diego, CA
+    start: July 2020
+    end: November 2023
+    bullets:
+      - Processed customer requests, order follow-up, and account-related inquiries with attention to accuracy and professionalism.
+      - Tracked expenses, vendor costs, and campaign budgets while identifying discrepancies and reporting trends over time.
+      - Prepared recurring business updates, product reporting content, and launch materials using organized templates and timelines.
+      - Supported revenue and engagement goals through disciplined record keeping and data-informed operational decisions.
+
+  - title: Digital Content Producer
+    company: Seed to Harvest
+    location: San Diego, CA
+    start: March 2025
+    end: May 2025
+    bullets:
+      - Supported recurring deliverables on fixed schedules by coordinating content production and performance review workflows.
+      - Applied audience metrics to refine reporting outputs and improve clarity of messaging across digital channels.
+
+projects:
+  - title: "Seed to Harvest: A Simple Explanation of Venture Capital"
+    start: July 2020
+    end: December 2020
+    bullets:
+      - Researched private markets and venture capital topics, synthesizing complex financial information into clear written deliverables.
+
+education:
+  - degree: B.S. Business Administration (Management), Minor in Art
+    school: San Diego State University (SDSU), Fowler College of Business
+    location: San Diego, CA
+    year: August 2021 - December 2025
+    details: GPA 3.42, Emphasis in Entrepreneurship
+
+skills:
+  - "Client Service & Reporting: client request management, deadline-driven deliverables, quarterly-style reporting support, documentation, cross-functional coordination"
+  - "Data & Analysis: data accuracy, performance metrics, Google Analytics, Excel reporting, reconciliation, attention to detail, SQL (basic)"
+  - "Tools: Microsoft Office (Excel, Word, PowerPoint, Outlook), Google Workspace, Power BI (familiar), Google Analytics"
+  - "Professional: time management, prioritization, written and verbal communication, self-starter, team collaboration"

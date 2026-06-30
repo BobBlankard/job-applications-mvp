@@ -1,0 +1,27 @@
+{
+  "name": "resume-builder",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/standalone.js",
+    "preview": "vite preview",
+    "test:import": "node scripts/test-pdf-import.js"
+  },
+  "dependencies": {
+    "@codemirror/commands": "^6.8.1",
+    "@codemirror/lang-yaml": "^6.1.2",
+    "@codemirror/state": "^6.5.2",
+    "@codemirror/theme-one-dark": "^6.1.2",
+    "@codemirror/view": "^6.38.0",
+    "dom-to-svg": "^0.12.2",
+    "js-yaml": "^4.1.0",
+    "jspdf": "^4.2.1",
+    "pdfjs-dist": "^5.6.205",
+    "svg2pdf.js": "^2.7.0"
+  },
+  "devDependencies": {
+    "vite": "^6.3.5"
+  }
+}

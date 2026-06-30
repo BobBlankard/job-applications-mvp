@@ -1,0 +1,179 @@
+/* Cover letter page — US Letter (8.5" × 11") */
+
+.cover-letter-page {
+  width: 816px;
+  min-height: 1056px;
+  background: #fff;
+  color: #1f2937;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12);
+  padding: 68px 76px;
+  box-sizing: border-box;
+  font-size: 11.5pt;
+  line-height: 1.6;
+  font-feature-settings: 'kern' 1, 'liga' 1;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  overflow: visible;
+}
+
+.cover-letter-page.page-overflow::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 1056px;
+  height: 4px;
+  background: repeating-linear-gradient(
+    90deg,
+    #ef4444 0,
+    #ef4444 8px,
+    transparent 8px,
+    transparent 16px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cover-letter-content {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.cl-error {
+  color: #b91c1c;
+  font-size: 11pt;
+}
+
+/* Letterhead — sender */
+.cl-header {
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.1rem;
+}
+
+.cl-sender-name {
+  font-size: 22pt;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: #111827;
+  margin-bottom: 0.45rem;
+}
+
+.cl-contact {
+  font-size: 9.5pt;
+  color: #6b7280;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
+.cl-contact-sep {
+  color: #d1d5db;
+  margin: 0 0.35em;
+}
+
+/* Date — business letter convention */
+.cl-date {
+  margin-bottom: 1.75rem;
+  font-size: 10.5pt;
+  color: #374151;
+}
+
+/* Recipient */
+.cl-recipient {
+  margin-bottom: 1.75rem;
+  line-height: 1.55;
+}
+
+.cl-recipient-line {
+  font-size: 11pt;
+  color: #374151;
+}
+
+.cl-recipient-company {
+  font-weight: 600;
+  color: #111827;
+  font-size: 11.5pt;
+}
+
+.cl-recipient-title {
+  font-style: italic;
+  color: #4b5563;
+}
+
+/* Salutation */
+.cl-salutation {
+  margin-bottom: 1.25rem;
+  font-size: 11.5pt;
+  color: #111827;
+}
+
+/* Body */
+.cl-body {
+  margin-bottom: 0.5rem;
+  flex: 1;
+}
+
+.cl-body-paragraph {
+  margin-bottom: 1rem;
+  text-align: left;
+  color: #1f2937;
+}
+
+.cl-body-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* Closing & signature block */
+.cl-closing-block {
+  margin-top: auto;
+  padding-top: 1.25rem;
+}
+
+.cl-closing {
+  margin-bottom: 0;
+  font-size: 11.5pt;
+  color: #111827;
+}
+
+.cl-signature-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 1.85rem;
+  padding-right: 8px;
+  min-height: 64px;
+}
+
+.cl-signature {
+  font-family: 'Great Vibes', 'Allura', 'Segoe Script', cursive;
+  font-size: 42pt;
+  font-weight: 400;
+  color: #1a1a2e;
+  line-height: 0.9;
+  letter-spacing: 0.01em;
+  transform: rotate(-2deg);
+  transform-origin: right center;
+  white-space: nowrap;
+  padding-top: 4px;
+}
+
+/* Preview panel */
+.preview-panel .cover-letter-page {
+  transform-origin: top left;
+}
+
+.preview-panel .cover-letter-page.page-overflow {
+  outline: 2px solid var(--warning);
+  outline-offset: 2px;
+}
+
+.resume-preview-thumb .cover-letter-page {
+  box-shadow: none;
+  min-height: auto;
+}
+
+.resume-preview-thumb .cl-signature {
+  font-size: 20pt;
+  transform: rotate(-1deg);
+}

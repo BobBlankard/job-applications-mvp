@@ -1,0 +1,273 @@
+/* Cover letter template variants — professional business letter styles */
+
+/* Classic — refined serif letterhead */
+.cl-template-classic {
+  font-family: 'Libre Baskerville', 'Times New Roman', Times, Georgia, serif;
+  padding: 72px 80px;
+}
+
+.cl-template-classic .cl-header {
+  text-align: center;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 1.25rem;
+}
+
+.cl-template-classic .cl-sender-name {
+  font-size: 20pt;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.cl-template-classic .cl-contact {
+  font-size: 9.5pt;
+  color: #6b7280;
+}
+
+.cl-template-classic .cl-date {
+  text-align: right;
+  font-style: italic;
+  color: #4b5563;
+}
+
+.cl-template-classic .cl-body-paragraph {
+  text-indent: 0;
+  line-height: 1.65;
+}
+
+.cl-template-classic .cl-signature {
+  color: #1e3a5f;
+}
+
+/* Modern — clean contemporary letter */
+.cl-template-modern {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  padding: 74px 80px;
+}
+
+.cl-template-modern .cl-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  border-bottom: 2px solid #111827;
+  padding-bottom: 1.1rem;
+  margin-bottom: 1.85rem;
+}
+
+.cl-template-modern .cl-sender-name {
+  font-size: 24pt;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #111827;
+}
+
+.cl-template-modern .cl-contact {
+  font-size: 9pt;
+  color: #9ca3af;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+}
+
+.cl-template-modern .cl-date {
+  font-size: 10pt;
+  color: #9ca3af;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 1.85rem;
+}
+
+.cl-template-modern .cl-recipient-company {
+  font-size: 12pt;
+  letter-spacing: -0.01em;
+}
+
+.cl-template-modern .cl-body-paragraph {
+  line-height: 1.65;
+  color: #374151;
+}
+
+.cl-template-modern .cl-signature {
+  font-size: 44pt;
+  color: #111827;
+}
+
+/* Minimal — understated elegance */
+.cl-template-minimal {
+  font-family: Georgia, 'Times New Roman', serif;
+  padding: 80px 84px;
+  font-size: 11pt;
+  line-height: 1.6;
+}
+
+.cl-template-minimal .cl-header {
+  margin-bottom: 2rem;
+}
+
+.cl-template-minimal .cl-sender-name {
+  font-weight: 400;
+  font-size: 14pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #374151;
+}
+
+.cl-template-minimal .cl-contact {
+  font-size: 9pt;
+  color: #9ca3af;
+  margin-top: 0.6rem;
+  letter-spacing: 0.06em;
+}
+
+.cl-template-minimal .cl-date {
+  font-size: 10pt;
+  color: #9ca3af;
+  margin-bottom: 2rem;
+}
+
+.cl-template-minimal .cl-body-paragraph {
+  line-height: 1.65;
+  color: #4b5563;
+}
+
+.cl-template-minimal .cl-closing-block {
+  padding-top: 1.5rem;
+}
+
+.cl-template-minimal .cl-signature {
+  font-size: 38pt;
+  color: #374151;
+}
+
+/* Professional — executive letterhead */
+.cl-template-professional {
+  font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  padding: 64px 76px;
+}
+
+.cl-template-professional .cl-header {
+  border-left: 4px solid #374151;
+  padding-left: 20px;
+  margin-bottom: 1.85rem;
+}
+
+.cl-template-professional .cl-sender-name {
+  font-size: 21pt;
+  font-weight: 600;
+  color: #111827;
+  letter-spacing: -0.02em;
+}
+
+.cl-template-professional .cl-contact {
+  font-size: 9.5pt;
+  color: #6b7280;
+  margin-top: 0.35rem;
+}
+
+.cl-template-professional .cl-date {
+  font-size: 10.5pt;
+  color: #4b5563;
+  font-weight: 500;
+}
+
+.cl-template-professional .cl-recipient {
+  padding-left: 4px;
+}
+
+.cl-template-professional .cl-body-paragraph {
+  line-height: 1.65;
+}
+
+.cl-template-professional .cl-signature-wrap {
+  padding-right: 16px;
+}
+
+.cl-template-professional .cl-signature {
+  font-size: 40pt;
+  color: #1f2937;
+}
+
+/* Compact — one-page friendly (noticeably tighter, not stripped down) */
+.cl-template-compact {
+  font-family: 'Libre Baskerville', 'Times New Roman', Times, serif;
+  padding: 58px 66px;
+  font-size: 10.5pt;
+  line-height: 1.5;
+}
+
+.cl-template-compact .cl-header {
+  margin-bottom: 1.15rem;
+  padding-bottom: 0.75rem;
+}
+
+.cl-template-compact .cl-sender-name {
+  font-size: 16pt;
+}
+
+.cl-template-compact .cl-date {
+  margin-bottom: 1.15rem;
+}
+
+.cl-template-compact .cl-recipient {
+  margin-bottom: 1.15rem;
+}
+
+.cl-template-compact .cl-salutation {
+  margin-bottom: 0.9rem;
+}
+
+.cl-template-compact .cl-body-paragraph {
+  margin-bottom: 0.8rem;
+}
+
+.cl-template-compact .cl-closing-block {
+  padding-top: 0.9rem;
+}
+
+.cl-template-compact .cl-signature-wrap {
+  margin-top: 1.35rem;
+  min-height: 52px;
+}
+
+.cl-template-compact .cl-signature {
+  font-size: 32pt;
+}
+
+/* Navy Accent — corporate polish */
+.cl-template-navy-accent {
+  font-family: 'Libre Baskerville', 'Times New Roman', Times, serif;
+  padding: 68px 76px;
+}
+
+.cl-template-navy-accent .cl-header {
+  border-bottom: 2px solid #1a365d;
+  padding-bottom: 1.1rem;
+  margin-bottom: 1.75rem;
+}
+
+.cl-template-navy-accent .cl-sender-name {
+  color: #1a365d;
+  font-size: 21pt;
+  font-weight: 700;
+}
+
+.cl-template-navy-accent .cl-contact {
+  color: #64748b;
+}
+
+.cl-template-navy-accent .cl-date {
+  color: #334155;
+}
+
+.cl-template-navy-accent .cl-recipient-company {
+  color: #1a365d;
+}
+
+.cl-template-navy-accent .cl-body-paragraph {
+  line-height: 1.62;
+}
+
+.cl-template-navy-accent .cl-signature {
+  font-size: 42pt;
+  color: #1a365d;
+}

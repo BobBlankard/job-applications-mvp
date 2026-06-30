@@ -1,0 +1,80 @@
+name: Owen Doherty
+
+contact:
+  email: o.n.doherty@gmail.com
+  phone: (858) 776-6618
+  location: San Diego, CA
+  website: owendohertyworks.com
+
+summary: |
+  User experience designer based in San Diego with 3+ years designing consumer web and
+  mobile applications from research through launch. Experienced in user research,
+  usability testing, wireframes, prototypes, and Figma. Builds cross-functional
+  products with engineering and uses AI-native workflows to accelerate design-to-build.
+  Passionate about simplifying complex workflows and advocating for end users through
+  data-informed design.
+
+experience:
+  - title: Co-Founder / UX Designer
+    company: PinHaus
+    location: San Diego, CA
+    start: March 2025
+    end: Present
+    bullets:
+      - Own end-to-end UX for a consumer marketplace app, from discovery and onboarding through core product workflows.
+      - Conducted 20+ user research sessions and usability tests, improving onboarding completion from 62% to 84%.
+      - Created wireframes, user flows, and Figma prototypes to communicate design ideas and validate concepts before build.
+      - Partnered closely with engineering during iterative development, balancing user needs with technical feasibility and business goals.
+      - Designed board-style discovery and curation flows that increased item save rate by ~55% in testing.
+
+  - title: Co-Founder / UX Designer
+    company: BandHouse
+    location: San Diego, CA
+    start: November 2025
+    end: Present
+    bullets:
+      - Design complex discovery experiences including feed and map-based layouts for a live events platform with 150+ events and 40+ venues.
+      - Led user research and usability testing that reduced time-to-event discovery by ~30%.
+      - Built rapid prototypes and flow diagrams in Figma to align product direction across cross-functional stakeholders.
+      - Broke down complex navigation and filtering challenges into clearer user journeys and interface patterns.
+
+  - title: Product Designer
+    company: Ecstasy Angel
+    location: San Diego, CA
+    start: July 2020
+    end: November 2023
+    bullets:
+      - Designed e-commerce user experiences on Shopify, including product pages, checkout flows, and brand-facing web touchpoints.
+      - Translated customer feedback and performance data into UX improvements that supported ~2.5% conversion and $10K+ in revenue.
+      - Managed visual design, information hierarchy, and end-to-end customer journey consistency across digital channels.
+
+  - title: UX Designer (Freelance)
+    company: monoright.com
+    location: San Diego, CA
+    start: February 2026
+    end: Present
+    bullets:
+      - Design responsive web experiences from Figma prototypes through HTML, CSS, and JavaScript implementation.
+      - Collaborate with clients to define requirements, wireframe key flows, and iterate based on feedback and analytics.
+      - Use AI-native tools including Cursor to accelerate prototyping, design exploration, and design-to-build workflows.
+
+projects:
+  - title: Portfolio & Product Design Case Studies
+    company: owendohertyworks.com
+    start: February 2026
+    end: Present
+    bullets:
+      - Document product design process including research, wireframes, prototypes, usability testing, and outcome metrics for web and mobile projects.
+
+education:
+  - degree: B.S. Business Administration (Management), Minor in Art
+    school: San Diego State University (SDSU)
+    location: San Diego, CA
+    year: August 2021 - December 2025
+    details: GPA 3.42, Emphasis in Entrepreneurship
+
+skills:
+  - "UX Design: user research, usability testing, wireframes, user flows, rapid prototyping, design studios, story mapping, interaction design, information architecture, design process"
+  - "Tools: Figma, Adobe Creative Suite (Photoshop, Illustrator), Cursor, HTML, CSS, JavaScript"
+  - "Collaboration: cross-functional collaboration, product management partnership, engineering collaboration, agile product development, problem solving, communication"
+  - "Technical: modern web applications, mobile UX, iOS, React, Firebase, AI-native design workflows, data-informed design"

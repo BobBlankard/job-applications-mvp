@@ -1,0 +1,27 @@
+name: Owen Doherty
+
+contact:
+  email: o.n.doherty@gmail.com
+  phone: (858) 776-6618
+  location: San Diego, CA
+  website: owendohertyworks.com
+
+date: auto
+
+recipient:
+  company: General Atomics Aeronautical Systems
+  hiring_manager: BPS Hiring Team
+  title: Business Process Analyst
+  address: Poway, CA
+
+salutation: Dear GA-ASI BPS Hiring Team,
+
+body: |
+  I am applying for the Business Process Analyst role with the BPS group in Poway. I recently graduated from SDSU's Fowler College of Business with a B.S. in Business Administration and have experience supporting requirements documentation and cross-functional coordination for software-enabled workflows. I am excited to help engineers and managers adopt internal tools for project planning and resource management.
+
+  At monoright.com, I document requirements, track requests and revisions, and prepare reporting summaries with Google Analytics. At BandHouse, I maintain planning data across 150+ events and 40+ venues while coordinating priorities across product, engineering, and operations.
+
+  I am organized, comfortable working with technical and non-technical stakeholders, and focused on tracking work through completion. Thank you for your consideration. My resume is attached.
+
+closing: Sincerely,
+signature_name: Owen Doherty

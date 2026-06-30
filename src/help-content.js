@@ -1,0 +1,76 @@
+export const AI_CONVERSION_PROMPT = `I need you to read this resume PDF and convert it into YAML format for my Resume Builder app.
+
+[Paste path or attach PDF]
+
+Use this YAML structure:
+name: ...
+contact:
+  email: ...
+  phone: ...
+  location: ...
+  linkedin: ...
+  website: ...
+summary: |
+  ...
+experience:
+  - title: ...
+    company: ...
+    location: ...
+    start: ...
+    end: ...
+    bullets:
+      - ...
+projects:
+  - title: ...
+    company: ...
+    start: ...
+    end: ...
+    bullets:
+      - ...
+education:
+  - degree: ...
+    school: ...
+    location: ...
+    year: ...
+    details: ...
+skills:
+  - "Category: skill1, skill2, ..."
+
+Important:
+- If the PDF has two columns (skills left, experience right), parse each column separately — don't interleave lines
+- Put work history under experience, personal/portfolio work under projects
+- Keep all bullet points and metrics intact
+- Output only the YAML so I can paste it into the Source editor`;
+
+export const HELP_SECTIONS = [
+  {
+    id: 'import-pdf',
+    title: 'Import PDF (simple layouts)',
+    body: `Use **Import PDF** in the toolbar for single-column resumes with straightforward section order. The app extracts text and builds starter YAML you can edit in the Source panel.
+
+Works best when sections read top-to-bottom in one column (Summary → Experience → Education → Skills). After import, review the YAML — fix any merged lines or mislabeled sections before downloading.`,
+  },
+  {
+    id: 'ai-conversion',
+    title: 'When to use AI conversion instead',
+    body: `Auto PDF import often scrambles **two-column** or heavily designed resumes (skills in a sidebar, icons, tables, multi-column headers). Sections get interleaved and bullets land in the wrong place.
+
+For those layouts, attach your PDF to an AI assistant and ask it to convert to YAML with **column-aware parsing**. Copy the result into the Source editor and tweak as needed.`,
+    prompt: AI_CONVERSION_PROMPT,
+    promptLabel: 'AI conversion prompt',
+  },
+  {
+    id: 'multiple-versions',
+    title: 'Save multiple resume versions',
+    body: `Click **Save Resume** to open a name dialog. Choose a library name like "Google Application" or "Startup Version" — this is the label on your home page cards.
+
+The YAML \`name:\` field is separate: it appears as the header on the exported PDF (e.g. your legal name). You can keep the same PDF name across several tailored versions.`,
+  },
+  {
+    id: 'templates',
+    title: 'Pick templates from the Library',
+    body: `Open **Library** in the sidebar to browse ATS-friendly templates with live previews. Click **Use Template** to create a new resume from that design.
+
+In the editor, use the template dropdown in the toolbar to switch styles anytime — your YAML content stays the same; only the PDF layout changes.`,
+  },
+];
