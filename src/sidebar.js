@@ -79,9 +79,11 @@ function renderAuthFooter(user) {
 }
 
 export function renderSidebar(activeView, { user = null } = {}) {
-  const collapsed = isSidebarCollapsed();
+  const signedIn = Boolean(user);
+  // Auth gate: keep brand expanded (logo + name); hide app nav until signed in.
+  const collapsed = signedIn ? isSidebarCollapsed() : false;
   return `
-    <aside class="sidebar${collapsed ? ' sidebar--collapsed' : ''}" aria-label="Main navigation">
+    <aside class="sidebar${collapsed ? ' sidebar--collapsed' : ''}${signedIn ? '' : ' sidebar--auth-gate'}" aria-label="Main navigation">
       <div class="sidebar-brand">
         <a href="#/applications" class="sidebar-brand-link" title="Job Applications">
           ${renderAppLogo({ className: 'sidebar-logo', size: 32 })}
@@ -91,11 +93,15 @@ export function renderSidebar(activeView, { user = null } = {}) {
           </span>
         </a>
       </div>
-      <nav class="sidebar-nav">
-        ${renderNavLinks(activeView)}
-      </nav>
+      ${
+        signedIn
+          ? `<nav class="sidebar-nav">${renderNavLinks(activeView)}</nav>`
+          : ''
+      }
       ${renderAuthFooter(user)}
-      <button
+      ${
+        signedIn
+          ? `<button
         type="button"
         class="sidebar-toggle"
         id="sidebar-toggle"
@@ -106,7 +112,9 @@ export function renderSidebar(activeView, { user = null } = {}) {
         <svg class="sidebar-toggle-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
           <path d="M12 4 6 10l6 6"/>
         </svg>
-      </button>
+      </button>`
+          : ''
+      }
     </aside>
   `;
 }

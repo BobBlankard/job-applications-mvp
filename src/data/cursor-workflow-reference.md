@@ -1,12 +1,12 @@
 # AI Import Workflow Reference
 
-Use any AI chat for generation. The website imports one paste per job and tracks applications.
+Use any AI chat (ChatGPT, Claude, Gemini, Cursor, etc.) for generation. The website imports one paste per job and tracks applications.
 
 ## Workflow
 
 1. **One-time setup:** paste the prompt from Applications How To plus your base/master resume together as the first message in an AI chat.
 2. **Per job:** paste only the full job description into the same chat (do not resend your resume or the full prompt).
-3. **Import:** copy the AI response and paste into **Import Application** on the website.
+3. **Import:** copy the AI's **full** response (all four sections) and paste into **Import Application** on the website.
 
 ## Import format (single paste)
 
@@ -32,28 +32,36 @@ Strengths:
 Verdict:
 - Clear apply / maybe / skip recommendation
 
-Use these three section labels and "- " bullets. Gaps first. Do not repeat fit_rating or fit_score here.
-
 ---RESUME YAML---
 name: Your Name
 contact:
   email: you@example.com
   phone: 555-1234
   location: City, ST
-summary: Tailored summary for this role.
+summary: |
+  Tailored summary for this role. Do not name the target company here.
 experience:
   - title: Role Title
     company: Company
-    start: 2022
+    location: City, ST
+    start: Jan 2022
     end: Present
     bullets:
       - Achievement bullet one
+      - Achievement bullet two
+education:
+  - degree: B.A. Example
+    school: Example University
+    location: City, ST
+    year: "2020"
 skills:
   - "Category: skill, skill, skill"
 ---COVER LETTER YAML---
 name: Your Name
 contact:
   email: you@example.com
+  phone: 555-1234
+  location: City, ST
 date: auto
 recipient:
   company: Example Corp
@@ -71,12 +79,12 @@ signature_name: Your Name
 
 | Section | Required | Notes |
 |---------|----------|-------|
-| `---APPLICATION---` | Recommended | Company, title, location, status, `fit_rating`, optional `fit_score` (0–100), optional `asks_for_linkedin` / `linkedin_required` (true when the posting requests LinkedIn). |
-| `---FIT---` | Optional | Honest assessment text only — not in resume/cover letter bodies. |
-| `---RESUME YAML---` | Yes | Full resume YAML (one page). Identity and employers must come from the user's base resume. No fit scores in body. |
-| `---COVER LETTER YAML---` | Yes | Full cover letter YAML. No fit scores in body. |
+| `---APPLICATION---` | Recommended | Company, title, location, status, **one** `fit_rating` value, optional `fit_score` (0–100), `asks_for_linkedin` true/false (or `linkedin_required`). |
+| `---FIT---` | Optional | Honest assessment text only — not in resume/cover letter bodies. Exact labels + `- ` bullets; gaps first. |
+| `---RESUME YAML---` | Yes | Full resume YAML (one page). Identity and employers from the user's base resume. Optional ` ```yaml ` fence around the document only. |
+| `---COVER LETTER YAML---` | Yes | Full cover letter YAML. Use `body: \|` for multi-paragraph text. |
 
-### Fit ratings
+### Fit ratings (pick exactly one)
 
 | `fit_rating` | Meaning |
 |--------------|---------|
@@ -87,7 +95,8 @@ signature_name: Your Name
 | `big_stretch` | Major mismatch on required experience |
 | `skip` | Not worth applying |
 
-- YAML may be raw or wrapped in ` ```yaml ` fences inside each section.
+- Never output `fit_rating: highly_qualified | good_match | …` — choose a single value.
+- YAML may be raw or wrapped in ` ```yaml ` fences inside each document section.
 - `status` defaults to `applied`. Applied date is set to today on import.
 - Legacy `---FIT---` text with APPLY / MAYBE / SKIP still parses; ratings are inferred when `fit_rating` is omitted.
 - Legacy markdown headings (`## FIT ASSESSMENT`, fenced YAML) still parse.
