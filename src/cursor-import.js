@@ -69,6 +69,14 @@ function stripFences(yamlText) {
   return fenced ? fenced[1].trim() : trimmed;
 }
 
+/** Unwrap a single outer markdown fence wrapping the whole import paste (ChatGPT habit). */
+function stripOuterMarkdownFence(text) {
+  const trimmed = String(text || '').trim();
+  const open = trimmed.match(/^```(?:yaml|yml|text|markdown)?\s*\r?\n/i);
+  if (!open || !/```\s*$/.test(trimmed)) return trimmed;
+  return trimmed.slice(open[0].length).replace(/\r?\n```\s*$/, '').trim();
+}
+
 function normalizeFitRating(raw) {
   const value = String(raw || '')
     .trim()
@@ -348,7 +356,7 @@ function parseMarkdownFormat(raw) {
  * Parse a single Cursor paste into application metadata + fit + resume/cover letter YAML.
  */
 export function parseCursorResponse(text) {
-  const raw = String(text || '').trim();
+  const raw = stripOuterMarkdownFence(String(text || '').trim());
   if (!raw) {
     throw new Error('Paste the full Cursor response first.');
   }

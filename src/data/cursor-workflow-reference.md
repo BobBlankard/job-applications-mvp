@@ -96,7 +96,8 @@ signature_name: Your Name
 | `skip` | Not worth applying |
 
 - Never output `fit_rating: highly_qualified | good_match | …` — choose a single value.
-- YAML may be raw or wrapped in ` ```yaml ` fences inside each document section.
+- The whole paste may be wrapped in one outer ` ```yaml ` … ` ``` ` fence (ChatGPT style); Import Application strips that wrapper.
+- YAML under resume/cover sections may also be wrapped in per-document fences.
 - `status` defaults to `applied`. Applied date is set to today on import.
 - Legacy `---FIT---` text with APPLY / MAYBE / SKIP still parses; ratings are inferred when `fit_rating` is omitted.
 - Legacy markdown headings (`## FIT ASSESSMENT`, fenced YAML) still parse.

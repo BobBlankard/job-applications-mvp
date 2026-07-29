@@ -106,6 +106,10 @@ recipient:
 body: I am applying for the Senior Engineer role at Acme Corp.
 `;
 
+const OUTER_FENCE_FORMAT = `\`\`\`yaml
+${STRUCTURED_FIT_FORMAT.trim()}
+\`\`\``;
+
 let failed = 0;
 
 function check(label, ok) {
@@ -133,6 +137,12 @@ const structured = parseCursorResponse(STRUCTURED_FIT_FORMAT);
 check('structured: fit_rating', structured.fitRating === 'highly_qualified');
 check('structured: fit_score', structured.fitScore === 91);
 check('structured: company', structured.company === 'Acme Corp');
+
+// Whole paste wrapped in one outer ```yaml fence (ChatGPT-style)
+const fenced = parseCursorResponse(OUTER_FENCE_FORMAT);
+check('outer fence: company', fenced.company === 'Acme Corp');
+check('outer fence: cover letter parses', Boolean(fenced.coverLetterData?.body));
+check('outer fence: no trailing fence in cover yaml', !fenced.coverLetterYaml.includes('```'));
 
 // Markdown format (legacy)
 const legacy = parseCursorResponse(MARKDOWN_FORMAT);
