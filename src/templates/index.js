@@ -282,3 +282,19 @@ export function getPdfStyle(templateId) {
 export function getTemplatesByCategory(categoryId) {
   return TEMPLATES.filter((t) => t.category === categoryId);
 }
+
+export function renderTemplateSelectOptions(templates, categories, selectedId, escapeHtml) {
+  return categories
+    .map((cat) => {
+      const items = templates.filter((t) => t.category === cat.id);
+      if (!items.length) return '';
+      const options = items
+        .map(
+          (t) =>
+            `<option value="${t.id}"${t.id === selectedId ? ' selected' : ''}>${escapeHtml(t.name)}</option>`
+        )
+        .join('');
+      return `<optgroup label="${escapeHtml(cat.label)}">${options}</optgroup>`;
+    })
+    .join('');
+}

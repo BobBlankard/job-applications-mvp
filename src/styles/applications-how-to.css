@@ -1,0 +1,122 @@
+/* Applications how-to page */
+
+.applications-howto-page {
+  max-width: 980px;
+}
+
+.applications-howto-card {
+  background: var(--surface-glass);
+  backdrop-filter: var(--glass-blur-light);
+  -webkit-backdrop-filter: var(--glass-blur-light);
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-shadow: var(--shadow-sm);
+  background-image: linear-gradient(
+    160deg,
+    rgba(154, 165, 179, 0.06) 0%,
+    transparent 45%,
+    rgba(154, 165, 179, 0.03) 100%
+  );
+}
+
+.applications-howto-steps {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--text-muted);
+  line-height: 1.55;
+  font-size: 14px;
+}
+
+.applications-howto-steps strong {
+  color: var(--text-primary);
+}
+
+.applications-howto-steps em {
+  font-style: normal;
+  color: var(--text-primary);
+}
+
+
+.applications-howto-prompt-actions {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.applications-howto-copy-btn {
+  flex: 1 1 200px;
+  min-height: 44px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.applications-howto-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 44px;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+.applications-howto-toggle-chevron {
+  font-size: 12px;
+  line-height: 1;
+  transition: transform 0.15s ease;
+}
+
+.applications-howto-toggle-btn[aria-expanded='true'] .applications-howto-toggle-chevron {
+  transform: rotate(180deg);
+}
+
+.applications-howto-prompt {
+  border: none;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: rgba(18, 21, 26, 0.65);
+  backdrop-filter: var(--glass-blur-light);
+  -webkit-backdrop-filter: var(--glass-blur-light);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.applications-howto-prompt[hidden] {
+  display: none;
+}
+
+.applications-howto-prompt-text {
+  margin: 0;
+  padding: 14px;
+  color: #b8c0c8;
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 480px;
+  overflow: auto;
+  font-family: ui-monospace, 'SF Mono', Menlo, Monaco, Consolas, monospace;
+}
+
+@media (max-width: 640px) {
+  .applications-howto-card {
+    padding: 16px;
+  }
+
+  .applications-howto-prompt-actions {
+    flex-direction: column;
+  }
+
+  .applications-howto-copy-btn,
+  .applications-howto-toggle-btn {
+    width: 100%;
+  }
+}

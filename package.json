@@ -5,9 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/standalone.js",
+    "build": "node scripts/generate-signature-font.js && vite build && node scripts/standalone.js",
     "preview": "vite preview",
-    "test:import": "node scripts/test-pdf-import.js"
+    "deploy:hosting": "npm run build && npx -y firebase-tools@latest deploy --only hosting",
+    "deploy:hosting:preview": "npm run build && npx -y firebase-tools@latest hosting:channel:deploy preview",
+    "test:import": "node scripts/test-pdf-import.js",
+    "test:generation": "node scripts/test-generation.js",
+    "test:cursor-import": "node scripts/test-cursor-import.js",
+    "ai:generate": "node scripts/generate-with-cursor.js"
   },
   "dependencies": {
     "@codemirror/commands": "^6.8.1",
@@ -16,6 +21,7 @@
     "@codemirror/theme-one-dark": "^6.1.2",
     "@codemirror/view": "^6.38.0",
     "dom-to-svg": "^0.12.2",
+    "firebase": "^11.10.0",
     "js-yaml": "^4.1.0",
     "jspdf": "^4.2.1",
     "pdfjs-dist": "^5.6.205",

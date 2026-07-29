@@ -6,9 +6,10 @@ import { importPdfFile } from '../pdf-import.js';
 import { bindYamlFileInput } from '../yaml-import.js';
 import { getResume, updateResume } from '../storage.js';
 import { renderInlineNameEdit, mountInlineNameEdit } from '../inline-name-edit.js';
-import { TEMPLATES, getTemplateById } from '../templates/index.js';
+import { TEMPLATES, TEMPLATE_CATEGORIES, getTemplateById, renderTemplateSelectOptions } from '../templates/index.js';
 import { navigate } from '../router.js';
 import { showHelpPanel } from '../help-panel.js';
+import { renderAppLogo } from '../logo.js';
 
 const LETTER_HEIGHT_PX = 11 * 96;
 const LETTER_WIDTH_PX = 8.5 * 96;
@@ -27,16 +28,18 @@ function escapeHtml(text) {
 }
 
 function renderToolbar(resume) {
-  const templateOptions = TEMPLATES.map(
-    (t) =>
-      `<option value="${t.id}"${t.id === resume.templateId ? ' selected' : ''}>${escapeHtml(t.name)}</option>`
-  ).join('');
+  const templateOptions = renderTemplateSelectOptions(
+    TEMPLATES,
+    TEMPLATE_CATEGORIES,
+    resume.templateId,
+    escapeHtml
+  );
 
   return `
     <header class="toolbar">
       <div class="toolbar-left">
         <button type="button" class="toolbar-btn-back" id="back-btn" title="Back to home">← Home</button>
-        <a href="#/" class="app-title-link"><h1 class="app-title">Resume Builder</h1></a>
+        <a href="#/" class="app-title-link">${renderAppLogo({ className: 'toolbar-logo', size: 24 })}<h1 class="app-title">Resume Builder</h1></a>
         ${renderInlineNameEdit(resume.name, resume.id, 'toolbar')}
       </div>
       <div class="toolbar-right">
@@ -179,7 +182,7 @@ export function mountEditorPage(container, resumeId) {
     container.innerHTML = `
       <header class="toolbar">
         <div class="toolbar-left">
-          <a href="#/" class="app-title-link"><h1 class="app-title">Resume Builder</h1></a>
+          <a href="#/" class="app-title-link">${renderAppLogo({ className: 'toolbar-logo', size: 24 })}<h1 class="app-title">Resume Builder</h1></a>
         </div>
       </header>
       <main class="home-page">
@@ -388,7 +391,13 @@ export function mountEditorPage(container, resumeId) {
     downloadBtn.disabled = true;
     downloadBtn.textContent = 'Generating…';
     try {
-      await downloadResumePdf(previewPageEl);
+      await downloadResumePdf(previewPageEl, {
+        data: lastValidData,
+        templateId: currentResume.templateId,
+        role: currentResume.name?.includes(' — ')
+          ? currentResume.name.split(' — ').pop().trim()
+          : 'Position',
+      });
     } catch (err) {
       showParseError(err.message || 'Failed to generate PDF.');
     } finally {

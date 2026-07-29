@@ -10,25 +10,46 @@
   --toolbar-height: 52px;
   --panel-header-height: 36px;
   --divider-width: 6px;
-  --bg-app: #2d3339;
-  --bg-panel: #1e2227;
-  --bg-preview: #6b7280;
-  --border-color: #3d4450;
+  --sidebar-width: 220px;
+  --sidebar-width-collapsed: 60px;
+  --bg-app: #181b1f;
+  --bg-panel: #12151a;
+  --bg-surface: #1f2329;
+  --bg-surface-raised: #272c33;
+  --bg-preview: #4a5058;
+  --border-color: #353b44;
+  --border-subtle: #2a2f36;
   --text-primary: #e8eaed;
-  --text-muted: #9aa0a6;
-  --accent: #4a9eff;
-  --accent-hover: #3a8eef;
-  --warning: #f59e0b;
-  --error: #ef4444;
+  --text-muted: #8b939e;
+  --accent: #9aa5b3;
+  --accent-hover: #b4bdc8;
+  --accent-muted: rgba(154, 165, 179, 0.14);
+  --warning: #d4a054;
+  --error: #c96a6a;
+  --radius-sm: 2px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.18);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.22);
+  --surface-glass: rgba(31, 35, 41, 0.68);
+  --surface-glass-raised: rgba(39, 44, 51, 0.78);
+  --surface-glass-panel: rgba(18, 21, 26, 0.72);
+  --surface-glass-overlay: rgba(31, 35, 41, 0.85);
+  --glass-blur: blur(14px);
+  --glass-blur-light: blur(10px);
+  --layer-separator: rgba(255, 255, 255, 0.05);
+  --transition-fast: 0.15s ease;
+  --transition-sidebar: 0.2s ease;
 }
 
 html,
 body {
   height: 100%;
   overflow: hidden;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   background: var(--bg-app);
   color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
 }
 
 .toolbar {
@@ -37,14 +58,17 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0 16px;
-  background: #252a30;
-  border-bottom: 1px solid var(--border-color);
+  background: var(--surface-glass);
+  backdrop-filter: var(--glass-blur-light);
+  -webkit-backdrop-filter: var(--glass-blur-light);
+  border-bottom: none;
+  box-shadow: 0 1px 0 var(--layer-separator);
   gap: 16px;
 }
 
 .toolbar-left {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 12px;
   flex-shrink: 0;
 }
@@ -79,27 +103,27 @@ body {
 }
 
 .page-warning {
-  background: rgba(245, 158, 11, 0.15);
-  color: #fbbf24;
-  border: 1px solid rgba(245, 158, 11, 0.3);
+  background: rgba(212, 160, 84, 0.12);
+  color: #e8c078;
+  border: 1px solid rgba(212, 160, 84, 0.28);
 }
 
 .parse-error {
-  background: rgba(239, 68, 68, 0.15);
-  color: #fca5a5;
-  border: 1px solid rgba(239, 68, 68, 0.3);
+  background: rgba(201, 106, 106, 0.12);
+  color: #e0a0a0;
+  border: 1px solid rgba(201, 106, 106, 0.28);
 }
 
 .import-notice {
-  background: rgba(74, 158, 255, 0.15);
-  color: #93c5fd;
-  border: 1px solid rgba(74, 158, 255, 0.3);
+  background: rgba(154, 165, 179, 0.12);
+  color: #b8c2ce;
+  border: 1px solid rgba(154, 165, 179, 0.28);
 }
 
 .save-notice {
-  background: rgba(34, 197, 94, 0.15);
-  color: #86efac;
-  border: 1px solid rgba(34, 197, 94, 0.3);
+  background: rgba(120, 160, 130, 0.12);
+  color: #a8c8b0;
+  border: 1px solid rgba(120, 160, 130, 0.28);
 }
 
 .btn-secondary:disabled {
@@ -127,25 +151,27 @@ body {
   font-size: 13px;
   font-weight: 500;
   padding: 7px 14px;
-  border-radius: 5px;
+  border-radius: var(--radius-sm);
   border: 1px solid transparent;
   cursor: pointer;
-  transition: background 0.15s, border-color 0.15s;
+  transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
   white-space: nowrap;
+  letter-spacing: 0.01em;
 }
 
 .btn-primary {
-  background: var(--accent);
-  color: #fff;
-  border-color: var(--accent);
+  background: var(--bg-surface-raised);
+  color: var(--text-primary);
+  border-color: rgba(154, 165, 179, 0.45);
 }
 
-.btn-primary:hover {
-  background: var(--accent-hover);
+.btn-primary:hover:not(:disabled) {
+  background: #323842;
+  border-color: rgba(154, 165, 179, 0.65);
 }
 
 .btn-primary:disabled {
-  opacity: 0.5;
+  opacity: 0.45;
   cursor: not-allowed;
 }
 
@@ -155,9 +181,10 @@ body {
   border-color: var(--border-color);
 }
 
-.btn-secondary:hover {
+.btn-secondary:hover:not(:disabled) {
   color: var(--text-primary);
-  border-color: #5a6270;
+  background: rgba(255, 255, 255, 0.04);
+  border-color: #4a515c;
 }
 
 .workspace {
@@ -175,8 +202,11 @@ body {
 
 .editor-panel {
   flex: 1 1 50%;
-  background: var(--bg-panel);
-  border-right: 1px solid var(--border-color);
+  background: var(--surface-glass-panel);
+  backdrop-filter: var(--glass-blur-light);
+  -webkit-backdrop-filter: var(--glass-blur-light);
+  border-right: none;
+  box-shadow: 1px 0 0 var(--layer-separator);
 }
 
 .preview-panel {
@@ -190,8 +220,9 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0 12px;
-  background: #2a2f36;
-  border-bottom: 1px solid var(--border-color);
+  background: rgba(0, 0, 0, 0.18);
+  border-bottom: none;
+  box-shadow: 0 1px 0 var(--layer-separator);
   flex-shrink: 0;
 }
 
@@ -268,10 +299,13 @@ body {
 
 .help-prompt-block {
   margin-top: 12px;
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
+  border: none;
+  border-radius: var(--radius-md);
   overflow: hidden;
-  background: #1e2227;
+  background: var(--surface-glass-panel);
+  backdrop-filter: var(--glass-blur-light);
+  -webkit-backdrop-filter: var(--glass-blur-light);
+  box-shadow: var(--shadow-sm);
 }
 
 .help-prompt-header {
@@ -280,8 +314,9 @@ body {
   justify-content: space-between;
   gap: 10px;
   padding: 8px 12px;
-  border-bottom: 1px solid var(--border-color);
-  background: #232830;
+  border-bottom: none;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 0 var(--layer-separator);
 }
 
 .help-prompt-label {
@@ -427,7 +462,7 @@ body.resizing * {
   .editor-panel {
     flex: 1 1 45%;
     border-right: none;
-    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 1px 0 var(--layer-separator);
   }
 
   .preview-panel {
@@ -494,9 +529,9 @@ body.resizing * {
 .inline-name-edit-input {
   font: inherit;
   color: inherit;
-  background: #1e2227;
+  background: var(--bg-panel);
   border: 1px solid var(--accent);
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   padding: 2px 8px;
   outline: none;
   min-width: 100px;

@@ -3,7 +3,7 @@ import { renderInlineNameEdit, mountInlineNameEdit } from '../inline-name-edit.j
 import { TEMPLATES, TEMPLATE_CATEGORIES } from '../templates/index.js';
 import { navigate } from '../router.js';
 import { mountResumePreview } from '../preview.js';
-import { renderSidebar } from '../sidebar.js';
+import { renderSidebar, initSidebar } from '../sidebar.js';
 import { bindYamlFileInput } from '../yaml-import.js';
 
 function formatDate(iso) {
@@ -169,16 +169,25 @@ function showTemplateModal(onCreate, preselectedId) {
           <input type="text" id="resume-name-input" class="form-input" value="My Resume" maxlength="80" />
         </div>
         <p class="modal-hint">Choose an ATS-friendly template. You can change it later in the editor.</p>
-        <div class="template-grid modal-template-grid">
-          ${TEMPLATES.map(
-            (t) => `
-            <button type="button" class="template-pick-card${t.id === selectedTemplateId ? ' selected' : ''}" data-template-id="${t.id}">
-              <div class="template-pick-preview" data-preview-template-id="${escapeAttr(t.id)}" data-preview-width="140"></div>
-              <div class="template-pick-name">${escapeHtml(t.name)}</div>
-            </button>
-          `
-          ).join('')}
-        </div>
+        ${TEMPLATE_CATEGORIES.map((cat) => {
+          const templates = TEMPLATES.filter((t) => t.category === cat.id);
+          if (!templates.length) return '';
+          return `
+            <h4 class="modal-template-group-title">${escapeHtml(cat.label)}</h4>
+            <div class="template-grid modal-template-grid">
+              ${templates
+                .map(
+                  (t) => `
+                <button type="button" class="template-pick-card${t.id === selectedTemplateId ? ' selected' : ''}" data-template-id="${t.id}">
+                  <div class="template-pick-preview" data-preview-template-id="${escapeAttr(t.id)}" data-preview-width="140"></div>
+                  <div class="template-pick-name">${escapeHtml(t.name)}</div>
+                </button>
+              `
+                )
+                .join('')}
+            </div>
+          `;
+        }).join('')}
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-action="cancel">Cancel</button>
@@ -191,7 +200,7 @@ function showTemplateModal(onCreate, preselectedId) {
   mountPreviewsInContainer(overlay);
 
   const nameInput = overlay.querySelector('#resume-name-input');
-  const templateGrid = overlay.querySelector('.modal-template-grid');
+  const templateGrid = overlay.querySelector('.modal-body');
 
   function close() {
     overlay.remove();
@@ -320,6 +329,7 @@ export function mountHomePage(container, initialView = 'home') {
         </div>
       </div>
     `;
+    initSidebar(container);
     mountPreviewsInContainer(container);
     bindEvents();
   }

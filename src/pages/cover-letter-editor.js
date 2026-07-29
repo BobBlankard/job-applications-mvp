@@ -5,8 +5,14 @@ import { downloadCoverLetterPdf } from '../pdf-export.js';
 import { bindYamlFileInput } from '../yaml-import.js';
 import { getCoverLetter, updateCoverLetter } from '../cover-letter-storage.js';
 import { renderInlineNameEdit, mountInlineNameEdit } from '../inline-name-edit.js';
-import { COVER_LETTER_TEMPLATES, getCoverLetterTemplateById } from '../cover-letter-templates/index.js';
+import {
+  COVER_LETTER_TEMPLATES,
+  COVER_LETTER_TEMPLATE_CATEGORIES,
+  getCoverLetterTemplateById,
+  renderCoverLetterTemplateSelectOptions,
+} from '../cover-letter-templates/index.js';
 import { navigate } from '../router.js';
+import { renderAppLogo } from '../logo.js';
 
 const LETTER_HEIGHT_PX = 11 * 96;
 const LETTER_WIDTH_PX = 8.5 * 96;
@@ -24,16 +30,18 @@ function escapeHtml(text) {
 }
 
 function renderToolbar(letter) {
-  const templateOptions = COVER_LETTER_TEMPLATES.map(
-    (t) =>
-      `<option value="${t.id}"${t.id === letter.templateId ? ' selected' : ''}>${escapeHtml(t.name)}</option>`
-  ).join('');
+  const templateOptions = renderCoverLetterTemplateSelectOptions(
+    COVER_LETTER_TEMPLATES,
+    COVER_LETTER_TEMPLATE_CATEGORIES,
+    letter.templateId,
+    escapeHtml
+  );
 
   return `
     <header class="toolbar">
       <div class="toolbar-left">
         <button type="button" class="toolbar-btn-back" id="back-btn" title="Back to cover letters">← Cover Letters</button>
-        <a href="#/cover-letters" class="app-title-link"><h1 class="app-title">Resume Builder</h1></a>
+        <a href="#/cover-letters" class="app-title-link">${renderAppLogo({ className: 'toolbar-logo', size: 24 })}<h1 class="app-title">Resume Builder</h1></a>
         ${renderInlineNameEdit(letter.name, letter.id, 'toolbar', { entityType: 'cover-letter' })}
       </div>
       <div class="toolbar-right">
@@ -171,7 +179,7 @@ export function mountCoverLetterEditorPage(container, letterId) {
     container.innerHTML = `
       <header class="toolbar">
         <div class="toolbar-left">
-          <a href="#/cover-letters" class="app-title-link"><h1 class="app-title">Resume Builder</h1></a>
+          <a href="#/cover-letters" class="app-title-link">${renderAppLogo({ className: 'toolbar-logo', size: 24 })}<h1 class="app-title">Resume Builder</h1></a>
         </div>
       </header>
       <main class="home-page">
@@ -376,7 +384,11 @@ export function mountCoverLetterEditorPage(container, letterId) {
     downloadBtn.textContent = 'Generating…';
     try {
       const name = lastValidData.name || currentLetter.name || 'Cover Letter';
-      await downloadCoverLetterPdf(previewPageEl, name);
+      await downloadCoverLetterPdf(previewPageEl, name, {
+        data: lastValidData,
+        templateId: currentLetter.templateId,
+        company: lastValidData.recipient?.company,
+      });
     } catch (err) {
       showParseError(err.message || 'Failed to generate PDF.');
     } finally {

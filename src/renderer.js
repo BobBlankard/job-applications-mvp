@@ -1,17 +1,15 @@
+import { sortExperienceChronologically } from './experience-sort.js';
+import { contactDisplayParts, shouldIncludeLinkedIn } from './contact-display.js';
+
 function escapeHtml(text) {
   const div = document.createElement('div');
   div.textContent = text;
   return div.innerHTML;
 }
 
-function formatContact(contact) {
+function formatContact(contact, exportContext = {}) {
   if (!contact || typeof contact !== 'object') return '';
-  const parts = [];
-  if (contact.email) parts.push(escapeHtml(contact.email));
-  if (contact.phone) parts.push(escapeHtml(contact.phone));
-  if (contact.location) parts.push(escapeHtml(contact.location));
-  if (contact.linkedin) parts.push(escapeHtml(contact.linkedin));
-  if (contact.website) parts.push(escapeHtml(contact.website));
+  const parts = contactDisplayParts(contact, shouldIncludeLinkedIn(exportContext)).map(escapeHtml);
   return parts.join(' · ');
 }
 
@@ -40,7 +38,7 @@ function renderEntryBlock(titleHtml, metaParts) {
 
 function renderExperience(items) {
   if (!Array.isArray(items) || items.length === 0) return '';
-  const entries = items
+  const entries = sortExperienceChronologically(items)
     .map((job) => {
       const title = escapeHtml(job.title || '');
       const company = job.company ? `<span class="resume-entry-org">${escapeHtml(job.company)}</span>` : '';
@@ -115,14 +113,16 @@ function renderSkills(items) {
   return `<section class="resume-section"><h2 class="resume-section-title">Skills</h2>${lines}</section>`;
 }
 
-export function renderResume(data) {
+export function renderResume(data, exportContext = {}) {
   if (!data || typeof data !== 'object') {
     return '<p class="resume-error">Invalid resume data</p>';
   }
 
   const name = escapeHtml(data.name || 'Your Name');
-  const contact = formatContact(data.contact);
-  const summary = data.summary ? escapeHtml(String(data.summary).trim()) : '';
+  const contact = formatContact(data.contact, exportContext);
+  const summary = data.summary
+    ? escapeHtml(String(data.summary).replace(/\s+/g, ' ').trim())
+    : '';
 
   return `
     <header class="resume-header">

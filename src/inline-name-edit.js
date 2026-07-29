@@ -82,18 +82,22 @@ export function mountInlineNameEdit(root, entityId, options = {}) {
     input.select();
   }
 
-  function commitEdit() {
+  async function commitEdit() {
     const trimmed = input.value.trim() || untitledLabel;
     const current = textEl.textContent;
     if (trimmed === current) {
       showLabel(current);
       return;
     }
-    const saved = saveUpdate(entityId, { name: trimmed });
-    if (saved) {
-      showLabel(saved.name);
-      onSaved?.(saved);
-    } else {
+    try {
+      const saved = await saveUpdate(entityId, { name: trimmed });
+      if (saved) {
+        showLabel(saved.name);
+        onSaved?.(saved);
+      } else {
+        showLabel(current);
+      }
+    } catch {
       showLabel(current);
     }
   }

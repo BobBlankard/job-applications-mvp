@@ -1,0 +1,298 @@
+# =============================================================================
+# OWEN DOHERTY — MASTER PROFILE (source of truth for AI resume tailoring)
+# =============================================================================
+# Use this file as the base when creating job-specific resumes or cover letters.
+# Tailor by reframing bullets and summary — do not invent employers, degrees,
+# certifications, or metrics. Prefer honest framing over inflated numbers.
+# =============================================================================
+
+name: Owen Doherty
+
+contact:
+  email: o.n.doherty@gmail.com
+  phone: (858) 776-6618
+  location: San Diego, CA
+  website: owendohertyworks.com
+  linkedin: linkedin.com/in/owendoherty
+
+ai_guidance: |
+  CANDIDATE PROFILE
+  - San Diego-based recent graduate (December 2025), early career, entrepreneurial background
+  - B.S. Business Administration (Management) from SDSU Fowler College of Business
+  - Strongest proof-of-execution: BandHouse (real users, events/venues data, cross-functional work)
+  - Strong operational/client experience: Ecstasy Angel (3+ years founder-led business)
+  - Web design & brand consulting business: monoright.com (Feb 2026–present)
+  - Technical builder: can code web/mobile (HTML, CSS, JavaScript, React, Swift, Firebase) but is NOT a senior engineer
+
+  HONEST FRAMING RULES
+  - PinHaus: first major app / learning project; pre-launch marketplace; cold-start challenges.
+    Do NOT use inflated beta-user or retention metrics unless Owen explicitly asks.
+    Safe angles: user interviews, requirements gathering, workflow documentation, lessons applied to BandHouse.
+  - BandHouse: local music scene app Owen built. Organizes San Diego-area live events so people can
+    find affordable local shows. OK to cite: 100+ app downloads, 1,000+ flyers posted, increased
+    attendance at smaller shows, real attendees driven through the platform. Also partner/venue outreach
+    and event data. Do not inflate beyond what Owen states.
+  - Ecstasy Angel: art account and community Owen grew organically to 10K+ followers. Built a business
+    around it: Shopify storefront, print-on-demand t-shirts and posters, one-off clothing, order
+    tracking, customer community. A/B testing on marketing to see what worked. OK to cite 10K+ followers
+    and $10K+ revenue. Community- and art-driven; not a corporate retail role.
+  - Seed to Harvest: (1) ~2020, ~6 months — Owen illustrated the published book "Seed to Harvest: A
+    Simple Explanation of Venture Capital," boiling complex VC topics down for a general audience.
+    (2) Short 2025 gig — podcast editor; produced YouTube clips; marketing/content experience.
+  - monoright.com: Owen's web design and brand consulting business — client websites, landing pages,
+    brand identity guidance, Google Analytics, and project documentation. Always describe as web design /
+    brand consulting; do not reduce to generic client support or operations language.
+  - Graduation: December 2025 (completed degree; not spring walk ceremony).
+  - Prefer on-site San Diego roles; open to travel when stated.
+  - Do not claim: Salesforce expertise (eager to learn), healthcare/defense/aerospace industry experience,
+    formal corporate BPA/CRM titles, security clearance, SQL/Power BI beyond basic/familiar unless role fits.
+
+  ATS FORMATTING (for this resume builder)
+  - Use inline meta lines: company · location · dates (no separate right-aligned date blocks)
+  - Single column; standard headers: Summary, Experience, Education, Skills (Projects optional)
+  - Mirror keywords from job posting naturally; no keyword stuffing
+
+  TAILORING BY ROLE TYPE
+  - Sales / BD / account support: Ecstasy Angel outreach, monoright web design client development, BandHouse partner prospecting
+  - Operations / coordinator / BPA: BandHouse ops data, PinHaus requirements, Ecstasy Angel process docs, monoright web project delivery
+  - Analyst / reporting: Google Analytics, Excel metrics, data accuracy, Seed to Harvest VC research
+  - Web / UX / strategist: BandHouse web platform, Ecstasy Angel Shopify, monoright web design & brand consulting, Figma, WCAG familiarity
+  - Software dev: PinHaus + BandHouse build experience; frame as builder/founder, not 5+ yr corporate SWE
+
+summary: |
+  San Diego-based SDSU Fowler College of Business graduate with hands-on experience across
+  entrepreneurship, client operations, business development, product building, and freelance
+  client work. Organized, self-motivated, and comfortable in fast-paced environments.
+  Combines business education with real execution across BandHouse, Ecstasy Angel, PinHaus,
+  monoright.com web design and brand consulting — with strengths in client websites, brand
+  consulting, documentation, cross-functional coordination, Google Analytics, and learning
+  technical workflows quickly.
+
+experience:
+  - title: Founder, Web Design & Brand Consulting
+    company: monoright.com
+    location: San Diego, CA
+    start: February 2026
+    end: Present
+    context: |
+      Owen's web design and brand consulting business. Delivers client websites, landing pages,
+      and brand consulting — not generic back-office support.
+    bullets:
+      - Run a web design and brand consulting practice serving multiple client accounts with responsive communication and clear project timelines.
+      - Design and build client websites and landing pages aligned with brand identity and conversion goals.
+      - Provide brand consulting on messaging, visual direction, and client-facing materials.
+      - Track website performance with Google Analytics and report results to inform design and brand priorities.
+      - Maintain organized project documentation, revisions, and status updates across concurrent web and brand deliverables.
+      - Build and deploy tailored web work using HTML, CSS, JavaScript, and modern tooling.
+
+  - title: Co-Founder
+    company: BandHouse
+    location: San Diego, CA
+    start: November 2025
+    end: Present
+    context: |
+      App Owen built to organize the local music scene — helps people discover affordable live events
+      and get out to smaller shows. Posted flyers in the community, drove real attendance, 100+ downloads.
+    bullets:
+      - Built a web and mobile app that organizes the local music scene and helps users find affordable live events.
+      - Posted 1,000+ flyers and promoted smaller shows to increase attendance and community turnout.
+      - Drove real attendees to local events through the platform (100+ app downloads).
+      - Maintain accurate event, venue, and planning data for discovery and outreach priorities.
+      - Conduct partner and venue outreach; coordinate messaging and launch priorities in San Diego.
+      - Gather user and partner feedback to improve event discovery and community engagement.
+
+  - title: Founder
+    company: PinHaus
+    location: San Diego, CA
+    start: March 2025
+    end: Present
+    context: |
+      First major app project — fashion/marketplace concept. Pre-launch learning project with
+      cold-start challenges. Honest story: user research, requirements, workflow lessons
+      applied to BandHouse. Avoid inflated user/retention metrics unless explicitly requested.
+    bullets:
+      - Built a pre-launch marketplace application using JavaScript, Swift, and Firebase.
+      - Conducted user interviews and stakeholder walkthroughs to gather feedback and inform product direction.
+      - Documented workflows and operational priorities across a pre-launch product initiative.
+      - Applied lessons learned to later product development and operations at BandHouse.
+      - Collaborated across product decisions on onboarding, discovery flows, and user experience.
+
+  - title: Founder
+    company: Ecstasy Angel
+    location: San Diego, CA
+    start: July 2020
+    end: November 2023
+    context: |
+      Owen's art account — grew organically to 10K+ followers and built a community around it.
+      Started a business: Shopify storefront, print-on-demand t-shirts and posters, one-off clothing,
+      order tracking, A/B testing on marketing. Community- and art-driven; natural organic growth.
+    bullets:
+      - Grew an art account organically to 10K+ followers and built an engaged community around the brand.
+      - Launched and ran a Shopify storefront with print-on-demand fulfillment for t-shirts, posters, and one-off clothing.
+      - Tracked orders and customer workflows through Shopify; managed inquiries and follow-up with a responsive approach.
+      - Ran A/B tests on marketing content to learn what resonated and improve engagement and conversion.
+      - Created and sold art-driven products (apparel, posters) with a community-first, organic growth approach.
+      - Tracked budgets, vendor costs, and business metrics in Excel and Shopify; achieved $10K+ in revenue.
+      - Left November 2023 to focus on school and subsequent product ventures (BandHouse, PinHaus).
+
+  - title: Podcast Editor & Content Producer
+    company: Seed to Harvest
+    location: San Diego, CA
+    start: March 2025
+    end: May 2025
+    context: |
+      Short-term gig (~3 months). Podcast editing and YouTube clip production for marketing and
+      outreach. Same Seed to Harvest brand as the 2020 VC book project (see projects).
+    bullets:
+      - Edited podcast episodes and produced short-form clips for YouTube and social distribution.
+      - Supported marketing and outreach by packaging content for web and social channels on fixed timelines.
+      - Applied engagement insights to refine clip format and messaging for audience response.
+
+  - title: Club Supervisor
+    company: High Country West
+    location: San Diego, CA
+    start: March 2021
+    end: July 2023
+    context: |
+      On-site operations for a large residential community while in school. Included
+      customer-facing coordination plus payment-related administrative work: mailing
+      payment notices, handling checks, tracking due dates, and distributing invoices.
+    bullets:
+      - Prepared and mailed resident payment notices and payment packets, including amounts due and clear payment instructions.
+      - Tracked upcoming payment deadlines and coordinated outgoing payment correspondence so notices went out on schedule.
+      - Handled checks associated with resident payments, processing and organizing payment materials with consistent attention to detail.
+      - Streamlined invoice mailing workflows to speed up preparation and distribution of billing documents to residents.
+
+projects:
+  - title: "Seed to Harvest: A Simple Explanation of Venture Capital"
+    start: July 2020
+    end: December 2020
+    context: |
+      Published book (~6 months, 2020). Owen illustrated the book and helped translate complex
+      venture capital topics into accessible language to un-gatekeep the subject for a general audience.
+    bullets:
+      - Illustrated a published book explaining venture capital for a general (including young) audience.
+      - Boiled down complex VC and business topics into clear, accessible visual narrative and content structure.
+      - Strengthens finance-adjacent, research, and visual storytelling angles.
+
+  - title: Portfolio & Project Site
+    company: owendohertyworks.com
+    start: February 2026
+    end: Present
+    bullets:
+      - Designed and developed a responsive portfolio site using HTML, CSS, JavaScript, and AI-assisted workflows.
+      - Showcases product, web, and creative project work.
+
+education:
+  - degree: B.S. Business Administration (Management), Minor in Art
+    school: San Diego State University (SDSU), Fowler College of Business
+    location: San Diego, CA
+    year: August 2021 - December 2025
+    details: GPA 3.42, Emphasis in Entrepreneurship
+    notes: December 2025 graduation. Fowler College alum network is useful for San Diego employers (e.g. EPI, GA-ASI connections).
+
+skills:
+  business_operations:
+    - client onboarding
+    - customer service (B2B and B2C)
+    - process documentation
+    - requirements gathering
+    - request tracking and prioritization
+    - cross-functional coordination
+    - vendor coordination
+    - confidentiality and record keeping
+    - meeting coordination and scheduling
+    - proposal-style materials preparation
+    - event coordination
+    - training and walkthrough support
+
+  sales_and_business_development:
+    - prospecting and outreach
+    - lead follow-up
+    - account cultivation
+    - pipeline-style activity tracking
+    - partner and venue outreach
+    - presentations and client-facing materials
+    - relationship building
+    - market research
+
+  data_and_reporting:
+    - Google Analytics
+    - Excel reporting and spreadsheets
+    - performance metrics and KPI tracking
+    - data accuracy and reconciliation
+    - budget and expense tracking
+    - Power BI (familiar)
+    - SQL (basic)
+
+  web_technical_and_design:
+    - HTML, CSS, JavaScript
+    - React, Next.js
+    - Swift (iOS)
+    - Firebase, REST APIs
+    - Shopify CMS
+    - Figma
+    - Adobe Creative Suite (Photoshop, Illustrator)
+    - responsive and mobile-first design
+    - WCAG and accessibility (familiar)
+    - SEO
+    - user research and user testing
+    - GitHub, VS Code, Cursor
+
+  tools:
+    - Microsoft Office (Excel, Word, PowerPoint, Outlook)
+    - Google Workspace
+    - LinkedIn
+    - Salesforce (eager to learn — not expert)
+    - Microsoft Teams (familiar)
+    - SharePoint (familiar)
+    - Adobe Acrobat (familiar)
+
+  professional_traits:
+    - self-starter and entrepreneurial
+    - organized and detail-oriented
+    - strong written and verbal communication
+    - dependable and responsive
+    - fast-paced environment
+    - on-site San Diego ready
+    - domestic travel ready
+    - eager to learn industry-specific tools and workflows
+
+role_framing_examples:
+  sales_roles:
+    emphasize: [Ecstasy Angel outreach, monoright web design client development, BandHouse partner prospecting, KPI tracking]
+    de_emphasize: [heavy engineering jargon, inflated PinHaus metrics]
+
+  operations_coordinator_roles:
+    emphasize: [BandHouse ops data, Ecstasy Angel process docs, monoright web project delivery, High Country West payment admin]
+    de_emphasize: [claiming formal contract admin or training-program management unless honestly framed as transferable]
+
+  business_process_analyst_roles:
+    emphasize: [requirements documentation, stakeholder interviews, tool request tracking, cross-functional coordination, PinHaus honest learning story]
+    de_emphasize: [aerospace/defense experience, claiming Salesforce mastery]
+
+  analyst_reporting_roles:
+    emphasize: [Google Analytics, Excel, Ecstasy Angel metrics, monoright web analytics, Seed to Harvest VC research]
+    de_emphasize: [claiming advanced SQL or Power BI unless basic/familiar]
+
+  web_strategist_ux_roles:
+    emphasize: [BandHouse web platform, Ecstasy Angel Shopify, monoright web design & brand consulting, Google Analytics, Figma, content governance]
+    de_emphasize: [claiming enterprise CMS like Drupal/WordPress unless honestly as transferable CMS concepts]
+
+  software_developer_roles:
+    emphasize: [PinHaus and BandHouse build work, monoright web design builds, portfolio site, Firebase, JavaScript, Swift]
+    de_emphasize: [inflated scale metrics; frame as founder/builder with 1-3 years hands-on, not senior SWE]
+
+applications_created_in_this_project:
+  - ProActivate Sales Assistant
+  - GA-ASI Business Process Analyst
+  - XiFin Associate Account Executive
+  - EPI Business Operations Coordinator
+  - StepStone SPAR Analyst
+  - Lido Client Relationship Manager
+  - ScienCell Business Development Coordinator
+  - UBS Client Associate
+  - Qualcomm Web Strategist
+  - AppFolio UX Designer
+  - Front Row Social Content Manager
+  - PwC Developer Senior Associate

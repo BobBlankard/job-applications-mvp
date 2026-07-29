@@ -1,16 +1,21 @@
+import { contactDisplayParts, shouldIncludeLinkedIn } from './contact-display.js';
+
 function escapeHtml(text) {
   const div = document.createElement('div');
   div.textContent = text;
   return div.innerHTML;
 }
 
-function formatContact(contact) {
+function formatRoleNumberLine(roleNumber) {
+  const value = String(roleNumber || '').trim();
+  if (!value) return '';
+  if (/^(?:requisition|req\.?|job\s*id|role)\b/i.test(value)) return escapeHtml(value);
+  return escapeHtml(`Requisition #${value}`);
+}
+
+function formatContact(contact, exportContext = {}) {
   if (!contact || typeof contact !== 'object') return '';
-  const parts = [];
-  if (contact.email) parts.push(escapeHtml(contact.email));
-  if (contact.phone) parts.push(escapeHtml(contact.phone));
-  if (contact.location) parts.push(escapeHtml(contact.location));
-  if (contact.website) parts.push(escapeHtml(contact.website));
+  const parts = contactDisplayParts(contact, shouldIncludeLinkedIn(exportContext)).map(escapeHtml);
   return parts.join('<span class="cl-contact-sep">·</span>');
 }
 
@@ -25,21 +30,23 @@ function formatDate(dateValue) {
   return escapeHtml(String(dateValue).trim());
 }
 
+function stripGenericAddresseeSuffix(text) {
+  return String(text || '')
+    .replace(/\s+(?:Hiring|Recruiting)\s+(?:Team|Manager)\s*$/i, '')
+    .trim();
+}
+
 function renderRecipientBlock(recipient) {
   if (!recipient || typeof recipient !== 'object') return '';
 
   const lines = [];
-  if (recipient.hiring_manager) {
-    lines.push({ text: escapeHtml(recipient.hiring_manager), class: 'cl-recipient-line' });
+  const company = stripGenericAddresseeSuffix(recipient.company);
+  if (company) {
+    lines.push({ text: escapeHtml(company), class: 'cl-recipient-line cl-recipient-company' });
   }
-  if (recipient.company) {
-    lines.push({ text: escapeHtml(recipient.company), class: 'cl-recipient-line cl-recipient-company' });
-  }
-  if (recipient.title) {
-    lines.push({ text: escapeHtml(recipient.title), class: 'cl-recipient-line cl-recipient-title' });
-  }
-  if (recipient.address) {
-    lines.push({ text: escapeHtml(recipient.address), class: 'cl-recipient-line' });
+  const roleNumberLine = formatRoleNumberLine(recipient.role_number);
+  if (roleNumberLine) {
+    lines.push({ text: roleNumberLine, class: 'cl-recipient-line' });
   }
 
   if (lines.length === 0) return '';
@@ -63,13 +70,13 @@ function renderBodyParagraphs(body) {
     .join('');
 }
 
-export function renderCoverLetter(data) {
+export function renderCoverLetter(data, exportContext = {}) {
   if (!data || typeof data !== 'object') {
     return '<p class="cl-error">Invalid cover letter data</p>';
   }
 
   const name = escapeHtml(data.name || 'Your Name');
-  const contact = formatContact(data.contact);
+  const contact = formatContact(data.contact, exportContext);
   const date = formatDate(data.date);
   const salutation = data.salutation ? escapeHtml(String(data.salutation).trim()) : '';
   const closing = data.closing ? escapeHtml(String(data.closing).trim()) : 'Sincerely,';

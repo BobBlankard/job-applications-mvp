@@ -1,11 +1,9 @@
-import { mountHomePage } from './pages/home.js';
-import { mountEditorPage } from './pages/editor.js';
-import { mountCoverLettersPage } from './pages/cover-letters.js';
-import { mountCoverLetterEditorPage } from './pages/cover-letter-editor.js';
+import { mountApplicationsPage } from './pages/applications.js';
+import { mountApplicationsHowToPage } from './pages/applications-how-to.js';
 
 let currentCleanup = null;
-let homeController = null;
-let coverLettersController = null;
+let applicationsController = null;
+let applicationsHowToController = null;
 
 export function navigate(path) {
   const normalized = path.startsWith('#') ? path : `#${path.startsWith('/') ? path : `/${path}`}`;
@@ -17,36 +15,28 @@ export function navigate(path) {
 }
 
 function parseRoute() {
-  const hash = window.location.hash.slice(1) || '/';
-  if (hash === '/' || hash === '/home') {
-    return { name: 'home', view: 'home' };
-  }
-  if (hash === '/library') {
-    return { name: 'home', view: 'library' };
-  }
-  if (hash === '/cover-letters') {
-    return { name: 'cover-letters' };
-  }
-  const coverLetterEditMatch = hash.match(/^\/cover-letter\/edit\/([^/]+)$/);
-  if (coverLetterEditMatch) {
-    return { name: 'cover-letter-edit', id: coverLetterEditMatch[1] };
-  }
-  const editMatch = hash.match(/^\/edit\/([^/]+)$/);
-  if (editMatch) {
-    return { name: 'edit', id: editMatch[1] };
-  }
-  return { name: 'home', view: 'home' };
-}
+  const hash = window.location.hash.slice(1) || '/applications';
 
-function clearShellControllers() {
-  if (homeController) {
-    homeController.cleanup();
-    homeController = null;
+  if (hash === '/applications') {
+    return { name: 'applications' };
   }
-  if (coverLettersController) {
-    coverLettersController.cleanup();
-    coverLettersController = null;
+  if (hash === '/applications-how-to') {
+    return { name: 'applications-how-to' };
   }
+
+  // Dropped product surfaces redirect to Applications
+  if (
+    hash === '/' ||
+    hash === '/home' ||
+    hash === '/library' ||
+    hash === '/cover-letters' ||
+    /^\/edit\/[^/]+$/.test(hash) ||
+    /^\/cover-letter\/edit\/[^/]+$/.test(hash)
+  ) {
+    return { name: 'redirect', to: '#/applications' };
+  }
+
+  return { name: 'redirect', to: '#/applications' };
 }
 
 function renderRoute() {
@@ -55,71 +45,55 @@ function renderRoute() {
 
   const route = parseRoute();
 
-  if (route.name === 'edit') {
-    if (currentCleanup) {
-      currentCleanup();
-      currentCleanup = null;
+  if (route.name === 'redirect') {
+    if (window.location.hash !== route.to) {
+      window.location.hash = route.to;
     }
-    clearShellControllers();
-    currentCleanup = mountEditorPage(app, route.id);
     return;
   }
 
-  if (route.name === 'cover-letter-edit') {
+  if (route.name === 'applications') {
     if (currentCleanup) {
       currentCleanup();
       currentCleanup = null;
     }
-    clearShellControllers();
-    currentCleanup = mountCoverLetterEditorPage(app, route.id);
-    return;
-  }
-
-  if (route.name === 'cover-letters') {
-    if (currentCleanup) {
-      currentCleanup();
-      currentCleanup = null;
+    if (applicationsHowToController) {
+      applicationsHowToController.cleanup();
+      applicationsHowToController = null;
     }
-    if (homeController) {
-      homeController.cleanup();
-      homeController = null;
-    }
-    if (!coverLettersController) {
-      coverLettersController = mountCoverLettersPage(app);
+    if (!applicationsController) {
+      applicationsController = mountApplicationsPage(app);
       currentCleanup = () => {
-        coverLettersController?.cleanup();
-        coverLettersController = null;
+        applicationsController?.cleanup();
+        applicationsController = null;
       };
     }
     return;
   }
 
-  if (coverLettersController) {
-    coverLettersController.cleanup();
-    coverLettersController = null;
+  if (route.name === 'applications-how-to') {
+    if (currentCleanup) {
+      currentCleanup();
+      currentCleanup = null;
+    }
+    if (applicationsController) {
+      applicationsController.cleanup();
+      applicationsController = null;
+    }
+    if (!applicationsHowToController) {
+      applicationsHowToController = mountApplicationsHowToPage(app);
+      currentCleanup = () => {
+        applicationsHowToController?.cleanup();
+        applicationsHowToController = null;
+      };
+    }
   }
-
-  if (homeController) {
-    homeController.setView(route.view);
-    return;
-  }
-
-  if (currentCleanup) {
-    currentCleanup();
-    currentCleanup = null;
-  }
-
-  homeController = mountHomePage(app, route.view);
-  currentCleanup = () => {
-    homeController?.cleanup();
-    homeController = null;
-  };
 }
 
 export function initRouter() {
   window.addEventListener('hashchange', renderRoute);
-  if (!window.location.hash) {
-    window.location.hash = '#/';
+  if (!window.location.hash || window.location.hash === '#/' || window.location.hash === '#') {
+    window.location.hash = '#/applications';
   } else {
     renderRoute();
   }

@@ -6,9 +6,9 @@ import {
   updateCoverLetter,
 } from '../cover-letter-storage.js';
 import { renderInlineNameEdit, mountInlineNameEdit } from '../inline-name-edit.js';
-import { COVER_LETTER_TEMPLATES } from '../cover-letter-templates/index.js';
+import { COVER_LETTER_TEMPLATES, COVER_LETTER_TEMPLATE_CATEGORIES } from '../cover-letter-templates/index.js';
 import { mountCoverLetterPreview } from '../cover-letter-preview.js';
-import { renderSidebar } from '../sidebar.js';
+import { renderSidebar, initSidebar } from '../sidebar.js';
 import { navigate } from '../router.js';
 import { bindYamlFileInput } from '../yaml-import.js';
 
@@ -136,16 +136,25 @@ function showTemplateModal(onCreate, preselectedId) {
           <input type="text" id="cl-name-input" class="form-input" value="My Cover Letter" maxlength="80" />
         </div>
         <p class="modal-hint">Choose a letter template. You can change it later in the editor.</p>
-        <div class="template-grid modal-template-grid">
-          ${COVER_LETTER_TEMPLATES.map(
-            (t) => `
-            <button type="button" class="template-pick-card${t.id === selectedTemplateId ? ' selected' : ''}" data-template-id="${t.id}">
-              <div class="template-pick-preview" data-preview-cl-template-id="${escapeAttr(t.id)}" data-preview-width="140"></div>
-              <div class="template-pick-name">${escapeHtml(t.name)}</div>
-            </button>
-          `
-          ).join('')}
-        </div>
+        ${COVER_LETTER_TEMPLATE_CATEGORIES.map((cat) => {
+          const templates = COVER_LETTER_TEMPLATES.filter((t) => (t.category || 'standard') === cat.id);
+          if (!templates.length) return '';
+          return `
+            <h4 class="modal-template-group-title">${escapeHtml(cat.label)}</h4>
+            <div class="template-grid modal-template-grid">
+              ${templates
+                .map(
+                  (t) => `
+                <button type="button" class="template-pick-card${t.id === selectedTemplateId ? ' selected' : ''}" data-template-id="${t.id}">
+                  <div class="template-pick-preview" data-preview-cl-template-id="${escapeAttr(t.id)}" data-preview-width="140"></div>
+                  <div class="template-pick-name">${escapeHtml(t.name)}</div>
+                </button>
+              `
+                )
+                .join('')}
+            </div>
+          `;
+        }).join('')}
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-action="cancel">Cancel</button>
@@ -158,7 +167,7 @@ function showTemplateModal(onCreate, preselectedId) {
   mountPreviewsInContainer(overlay);
 
   const nameInput = overlay.querySelector('#cl-name-input');
-  const templateGrid = overlay.querySelector('.modal-template-grid');
+  const templateGrid = overlay.querySelector('.modal-body');
 
   function close() {
     overlay.remove();
@@ -277,6 +286,7 @@ export function mountCoverLettersPage(container) {
         </div>
       </div>
     `;
+    initSidebar(container);
     mountPreviewsInContainer(container);
     bindEvents();
   }
